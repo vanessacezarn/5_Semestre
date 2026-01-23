@@ -1,5 +1,5 @@
 # 5_Semestre
-Matérias cursadas no 5° semestre do curso de Ciência de Computação - 2026/1
+Matérias cursadas no 5° semestre do curso de Ciência de Computação - UFN 2026/1
 
 * Cálculo Numérico Computacional - Professor: Leandro Ribeiro Fontoura
 * Inteligência Artificial - Professor: Alexandre de Oliveira Zamberlan
