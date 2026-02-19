@@ -1,8 +1,13 @@
+## competências da disciplina
+### unidade 1 - fundamentos das linguagens formais e autômatos
+* compreender fundamentos das linguagens formais e autômatos, necessários ao reconhecimento de linguagens, de forma assertiva
+### unidade 2 - linguagens, gramáticas e expressões regulares, autômatos finitos
+* aplicar os formalismos da classe das linguagens regulares na análise léxica, de forma precisa
+### unidade 3 - linguagens livres do contexto
+* aplicar os formalismos da classe das linguagens livres do contexto na análise sintática, de forma precisa
+### unidade 4 - linguagens enumeráveis recursivamente, linguagens sensíveis ao contexto e introdução aos compiladores
+* aplicar os formalismos das diferentes classes de linguagens, no desenvolvimento da etapa de análise nos tradutores de linguagens de programação, de forma construtiva
 # LINGUAGENS FORMAIS E AUTÔMATOS
-* unidade 1 - fundamentos das linguagens formais e autômatos
-* unidade 2 - linguagens, gramáticas e expressões regulares, autômatos finitos
-* unidade 3 - linguagens livres do contexto
-* unidade 4 - linguagens enumeráveis recursivamente, linguagens sensíveis ao contexto e introdução aos compiladores
 ## Teoria das linguagens formais 
 * 1936 - Allan Turing ➜ máquina de Turing (autômato) ➜máquina mais geral ➜ tudo que ela conseguir processar existe algoritmos sequenciais 
 * década de 50
@@ -50,3 +55,5 @@
          *  $\omega^0 = \varepsilon $
          *   $\omega^n = \omega ^(n-1) \omega$, para n>0
     2) $\omega = \varepsilon $
+         * $\omega^0$ é indefinida
+         * $\omega^n = \varepsilon$, para n>0
