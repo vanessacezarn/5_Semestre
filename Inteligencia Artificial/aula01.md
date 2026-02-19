@@ -18,4 +18,7 @@ IA = técnica e metodologia para contrução de Sistemas com Comportamento Intel
     * representação de conhecimento (B)
     * algortimos genéricos (A)
     * sistemas inteligentes (C)
-    * redes neurais (D) ➜ reconhecimento, diagnóstico 
+    * redes neurais (D) ➜ reconhecimento, diagnóstico
+* tipos de problemas ideais para IA
+   * diagnósticos  ➜ análise, reconhecimento, encaminhamento
+   * 'empacotamento' ➜ problemas que a solução está em um conjunto de passos
