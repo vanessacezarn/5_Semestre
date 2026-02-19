@@ -1,3 +1,13 @@
+## Competências da disciplina
+### unidade 01 - fundamentos e estruturas dos sistemas operacionais
+- compreender os fundamentos dos sistemas operacionais, necessários às diferentes gerências que propiciam a multiprogramação, de forma assertiva
+### unidade 02 - processos, threads e escalonamento
+* analisar processos, threads e escalonamento do processador no ambiente multiprogramado, de forma precisa
+### unidade 03 - sincronização de processos e dealocks
+* aplicar a sincronização de processos de threads na programação concorrente, de forma precisa
+### unidade 04 - memória ram, memória virtual e sistemas de arquivos
+* compreender a organização da memória real, memória virtual e dos sistesmas de arquivos, nas gerências dos sistemas operacionais, de forma construtiva
+---
 # SISTEMAS OPERACIONAIS
 * **definição:** é um programa colocado entre o hardware do computador e os programas do usuário
 * comunicação com usuário ➜ torna o computardor conveniente
