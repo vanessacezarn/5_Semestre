@@ -1,3 +1,4 @@
+# PROJETO DE SOFTWARE
 ## Competências da disciplina
 ### unidade 01
 - lembrar os aspectos fundamentais de projeto de software aplicados a projetos de sistemas computacionais de forma crítica
@@ -14,14 +15,17 @@
 ### linguagens 
 - java sprig + thymeleaf + MySQL + JPA
 ---
-# PROJETO DE SOFTWARE
-### revisão
+### revisão - engenharia de software
 - software = conjunto de instruções + dados + documentação ➜ produto desenvolvido por programadores
-- engenharia = desenvolver um produto de forma metódica  ➜ processo (seguir passos) de construção de um projeto
+- engenharia = desenvolver um produto de forma metódica  ➜ **processo** (seguir passos) de construção de um projeto
 ```mermaid
   graph LR;
     COMUNICAÇÃO-requisitos_software --> PLANEJAMENTO-custo_tempo;
     PLANEJAMENTO-custo_tempo --> PROJETO-UML;
     PROJETO-UML --> CONSTRUÇÃO-código;
     CONSTRUÇÃO-código --> ENTREGA-manutenção
-```  
+```
+- cliclo de vida de desenvolvimento de software ou metodologia de desenvolvimento ➜ como organiza o processo para construção do software
+--- 
+### atividade
+- programa de cadastro de produtos utilizando Java com interface grafica e armazenamento em arquivo csv
