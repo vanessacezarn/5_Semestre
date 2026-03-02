@@ -51,8 +51,37 @@
 - Linguagem de Modelagem Unificada (UML) seus autores sugerem que um sistema pode ser descrito por cinco visões interdependentes desse sistema
 ### Visões de um sistema
 - o desenvolvimento do sistema do software complexo demanda que seus desenvolvedores tenham a possibilidade de examinar e estudar esses sistema a partir de perspectivas diversas
-  #### 1) Visão de Casos de Uso
-  #### 2) Visão de Projeto
-  #### 3) Visão de Implementação
-  #### 4) Visão de Implantação
-  #### 5) Visão de Processo
+<div align="center"><img width="482" height="259" alt="{29415B30-5E6E-4AFD-AAA4-ED0C215BF359}" src="https://github.com/user-attachments/assets/a6f16422-76d8-45a0-89c3-2c5c02111b56" />
+</div>
+
+#### 1) Visão de Casos de Uso
+- descreve o sistema de um ponto de vista externo como um conjunto de interações entre o sistema e os agentes externos ao sistema
+#### 2) Visão de Projeto
+- enfatiza as características do sistema que dão suporte, tanto estrutural quanto comportamental, às funcionalidades externamente visíveis do sistema
+#### 3) Visão de Implementação
+- abrage o gerenciamento de versões do sistema, construídas pelo agrupamento de módulos e subsistemas
+#### 4) Visão de Implantação
+-   corresponde à distribuição física do sistema em seus subsistemas e à conexão entre essas partes
+#### 5) Visão de Processo
+- esta visão enfatiza as características de concorrência(paralelismo), sincronização e desempenho do sistema
+
+### Diagramas da UML
+- artefatos de software, documentos que podem ser textuais ou gráficos, são os artefatos que compõem as visões do sistema
+- os 13 diagramas da UML 2.0
+<div align="center">
+    <img width="564" height="305" alt="{74579CC8-7647-4FC6-987D-5E1889D37140}" src="https://github.com/user-attachments/assets/591861a7-e5a4-489a-86ef-e59828051dc9" />
+</div>
+-  na discipla será trabalhada a organizaçao F.F.D.
+
+---
+
+## Processo de desenvolvimento de software
+
+```mermaid
+    graph LR;
+        COMUNICAÇÃO-requisitos_software --> PLANEJAMENTO-custo_tempo;
+        PLANEJAMENTO-custo_tempo --> PROJETO-UML;
+        PROJETO-UML --> CONSTRUÇÃO-código;
+        CONSTRUÇÃO-código --> ENTREGA-manutenção
+```
+
