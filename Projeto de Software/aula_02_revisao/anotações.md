@@ -85,3 +85,57 @@
         CONSTRUÇÃO-código --> ENTREGA-manutenção
 ```
 
+### Atividades típicas de um processo de desenvolvimento
+1) Levantamento de requisitos
+    - compreensão do problema aplicada ao desenvolvimento de software
+    - objetivo: usuários e desenvolvedores tenham a mesma visão do problema a ser resolvido
+    - requisitos são identificados a partir de um domínio ou problema de negócio ( área caracterizada por um conjunto de conceitos e terminologias compreendidas por especialistas na área, ou seja, a parte relevante do mundo real para o desenvolvimento do sistema)
+        - requisitos funcionais = funcionalidades do sistema
+        - requisitos não funcionais = características de qualidae que o sistema deve possuir e que estão relacionadas às suas funcionalidades
+        - requisitos normativos = impostas sobre o desenvolvimento do sistema, por exemplo, adequação de custos e prazos, aspectos legais, componentes de hardware e software. Está incluso as regra de negócio
+    - medir a qualidade de um sistema de software é atráves da qualidade = será útil se os requisitos definidos forem atendidos e refletirem as necessidades dos usuários. 
+2) Análise
+    - etapa em que analistas realizam um estudo detalhado dos requisitos levantados na atividade anterior
+    - a partir do estudo são construídos modelos para representar o sistema a ser construído
+    - principais ferramentas da UML para análise:
+        - diagrama de casos de uso (funcionalidades e fluxos)
+        - diagrams de classes
+    - foco principal = aspectos lógicos e independentes de implementação de um sistema  
+3) Projeto
+    - definição de como o sistema funcionará para atender os requisitos
+    - são adicionadas as restrições de tecnologias aos modelos construídos na fase de análise
+    - composto por duas atividades principais:
+        - projeto da arquitetura ou de alto nível = distribuir as classes de objetos relacionadas do sistema em subsistemas e seus componentes, distribuir os componentes fisicamente pelos recursos de hardware disponivel ➜ normalmente utiliza diagramas de implementação
+        - projeto detalhado ou de baixo nível = são modelados as colaborações ente os objetos de cada módulo com o objetivo de realizar suas funcionalidades, são realizadas projeto de interface com usuário, projeto de banco de dados ➜ diagramas utilizados: diagrama de classes, diagrama de casos de uso, diagrama de interação, diagrama de estado e diagrama de atividade
+4) Implementação
+    - sistema é codificado
+5) Teste
+    - verificação do sistema construído, os requisitos foram atendindo
+    - relatórios de testes = informações sobre erros detectados no software
+    - tipos básicos de testes:
+        - teste de unidades: sobre elementos do código-fonte do sistema
+        - teste de integração: sobre operações do sistema 
+6) Implantação
+   - sistema é empacotado, distribuido e instalado no ambiente do usuário
+   - manuais do sistema
+   - treinamento dos usuários
+---
+## Participantes do processo
+#### gerente do projeto
+- responsável pela gerência das atividades na construção do sistema
+    - exemplo: orçamento do projeto, estimar o tempo para o desnevolvimento do sistema, ...
+#### Analista
+- profissional que deve ter conhecimento do domínio do negócio e entender seua problema para definir os requisitos
+- devem se comunicar com especialistas do domínio para obter conhecimento acerca dos problemas e das necessidades envolvidas
+#### Projetista
+- avalia as alternativad de solução do problema resultante da análise
+- gerar a especicficação de uma solução computacional detalhada
+#### Arquitetos de Software
+- elaborar a arquitetura do sistema como um todo
+- toma decisões sobre quais subsistemas compõem o sistema como um todo e quais são as interfaces entre esses subsistemas.
+-  deve ser capaz de tomar decisões técnicas detalhadas 
+#### Programadores
+- responsável pela implementação do sistema
+#### Especialistas do domínio
+### Avaliadores de qualidade
+---
