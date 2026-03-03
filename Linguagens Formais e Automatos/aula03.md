@@ -18,7 +18,11 @@
 - exemplos:
 1) L5 = { W ∈ { a,b,c}+ | W tem prefixo aacc e |w| = 5}
    - M5 = ({a,b,c} , {q0,q1,q2,q3,q4,q5}, $\sigma$, q0, {q5})
-3) L6 = { W ∈ {0,1}+ | W tem tamanho ímpar}
+2) L6 = { W ∈ {0,1}+ | W tem tamanho ímpar}
     - M6 = ({0,1}, {q0,q1,q2}, $\sigma$, q0, {q1}) 
-5) L7 = { W ∈ { a,b}+ | ab é uma subpalavra de W}
+3) L7 = { W ∈ { a,b}+ | ab é uma subpalavra de W}
     - M7 = ({a,b}, {q0,q1,q2}, $\sigma$ ,q0,{q2})
+4) L8 = { W ∈ {a,b}+ | W tem subpalavra aaa}
+     - M8 = ({a,b}, {q0,q1,q2}, $\sigma$, q0, {q3})
+5) L9 = { W ∈ {1,0}+ | W tem sufixo 10}
+     - M9 = ({0,1}, {q0,q1,q2}, $\sigma$, q0, {q2}) 
