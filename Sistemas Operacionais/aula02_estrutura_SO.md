@@ -89,10 +89,44 @@
 2) Realizar uma pesquisa bibliográfica sobre a Estrutura do Sistema Operacional escolhido.
 3) Descrever sua estrutura e cada um de seus componentes.
 4) Representar graficamente esta estrutura.
-
-
-
-
+---
+## Chamadas ao sistema (System call)
+- utilizada para que as rotinas oferecidas pelo núcleo possam acessar ao hardware
+- fornecem a interface entre um processo e o sistema operacional, ou seja, é a interface de programação para os serviços fornecidos pelo SO
+- instruções em assembly, mas podem ser escritas em linguagens de mais alto nível, como C e C ++
+- programa de alto nível ➜ pode gerar outras chamadas
+- In-line
+- é necessário o mecanismo de interrupções
+- API disponíveis aos compiladores pelos SO
+   - exemplo API para manipulação de arquivos na linguagem C
+      - exemplo: copiar 2 arquivos (o que está em negrito são chamadas)
+         1) **criar** o novo arquivo copia.txt (abrir - criando em modo de escrita)
+         2) **abrir** o arquivo original.txt em modo de leitura
+         3) **ler** uma linha no arquivo original.txt
+         4) **gravar** no arquivo copia.txt
+         5) repetir passos 3 e 4 enquanto não for o fim do arquivo
+         6) **fechar** o arquivo original.txt
+         7) **fechar** o arquivo copia.txt
+- a API para as chamadas ao sistema invocam as chamadas ao Kernel do SO
+- 3 métodos para passar parâmetros às chamadas
+   - registradores (mais simples)
+   - bloco ou tabela na memória e o endereço do bloco é passado ao registrados
+   - inseridos (push) na pilha do sistema pelo programa e lidos/removidos (pop) pelo SO
+   - * segunda e terceira não limitam a quantidade de parâmetros
+- 5 categorias de chamadas ao sistema
+   - controle de processo
+   - gerência de arquivos
+   - gerência de dispositivos
+   - manutenção de informações
+   - comunicação
+### Controle de processo
+### Gerência de arquivos
+- exemplos de chamadas: create/delete file, open, close, read, write,...
+- atributos de arquivos: nome, tipo, código de proteção, tamanho,...
+### Gerência de Dispositivos
+- exemplos de chamadas: request/release device, read, write, reposition, get/set, 
+### Gerência de informações
+### Comunicação
 
 
 
