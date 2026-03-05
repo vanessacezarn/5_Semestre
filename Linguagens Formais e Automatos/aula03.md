@@ -18,8 +18,23 @@
 - exemplos:
 1) L5 = { W ∈ { a,b,c}+ | W tem prefixo aacc e |w| = 5}
    - M5 = ({a,b,c} , {q0,q1,q2,q3,q4,q5}, $\sigma$, q0, {q5})
+   - ```mermaid
+        graph LR;
+          q0--|a|--> q1;
+          q1--|a|--> q2;
+          q2 --|c|--> q3;
+          q3 --|c|--> q4;
+          q4--|a,b,c|-->q5;
+          q5--|a,b,c|-->q5;
+      ```
 2) L6 = { W ∈ {0,1}+ | W tem tamanho ímpar}
-    - M6 = ({0,1}, {q0,q1,q2}, $\sigma$, q0, {q1}) 
+    - M6 = ({0,1}, {q0,q1,q2}, $\sigma$, q0, {q1})
+    - ```mermaid
+        graph LR;
+          q0--|0,1|--> q1;
+          q1--|0,1|--> q2;
+          q2 --|0,1|--> q1;
+      ```
 3) L7 = { W ∈ { a,b}+ | ab é uma subpalavra de W}
     - M7 = ({a,b}, {q0,q1,q2}, $\sigma$ ,q0,{q2})
 4) L8 = { W ∈ {a,b}+ | W tem subpalavra aaa}
