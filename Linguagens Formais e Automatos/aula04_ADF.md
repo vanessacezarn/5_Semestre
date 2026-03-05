@@ -1,0 +1,23 @@
+# AUTÔMATO FINITO DETERMINÍSTICO - AFD
+- é um sistema de estados finitos
+  - um modelo matemático de sistemas com entradas e saídas discretas
+  - esse sistema pode assumir um número finito e conhecido de estados
+  - cada estado mantém somente as informações passadas necessárias para determinar a ação para a próxima entrada --> não possui memória de trabalho
+  - para armazenar informações, o AFD usa o conceitos de estados
+- é
+- ...
+- é composta por 3 partes:
+  - **fita de entrada**
+  - **unidade de controle**
+  - **programa ou função de transição ou função programa ($\sigma$)**
+    - pode ser representada através de : diagrama, tabela, notação
+    - comanda as leituras e define o estado da máquina
+    - é uma função parcial (cada elemento do domínio está relacionado com no máximo um elemento do contradomínio - estado e símbolo)
+    - determina o novo estado do autômato
+- formalmente um AFD é uma 5-upla
+- sempre para ao processar qualquer palavra
+- a parada de um autômato pode ser de duas maneiras: aceitando ou rejeitando a palavra W
+- condições de parada:
+   - processa o último símbolo da fita e assume um estado final = **aceita**
+   - processa o último símbolo da fita e assume um estado não final = **rejeita**
+   - função programa indefinida para o argumento = **rejeita**
