@@ -28,7 +28,7 @@
 * Sua modelagem e código esta na pasta CodigosMetBusca
 
 ---
-
+##### aula 05/03
 - para mudanças de estados sempre fazer 3 perguntas:
   - 1) heValido
     2) já foi visitado
@@ -48,6 +48,7 @@
   - a que mais consome memória
   - em geral é mais utilizada
   - usa fila
+  - nos problemas estudados em sala geralmente utilizare este
 ```
          1
   2      3       4
@@ -60,3 +61,13 @@
     - Entretanto, só um passageiro com o remador (homem) é possível. E não se pode deixar sozinhos na margem um Carneiro com alface e um Carneiro com o lobo.
     -  qual é a sequencia de passos necessários para levar todos para a outra margem.
 - Sua modelagem e código está na pasta CodigosMetBusca
+--- 
+##### aula 06/03
+#### Estrutura de dados - revisão
+- equals()
+    - é chamado quando utiliza equals, contains, indexOf  ➜ principalmente em listas
+    - é preciso reescreve-lo para comparar as variaveis que não podem se repetir, se não reescrever ele vai utilizar o equals padrão
+- hashCode()
+    - add()
+    - principalmente no hashSet().
+- variavel com final na frente é para impedir que o programador mexa na matriz original , sempre vai obriga-lo a fazer um clone
