@@ -1,5 +1,5 @@
 # Metodos de Busca
-Nesta pasta encontra-se a solução de alguns problemas estudados em sala durante as aulas sobre métodos de busca. Foi utilizado nos códigos o JAR buscaJava disponibilizado pelo professor (ele encontra-se dentro da pasta lib).
+* Nesta pasta encontra-se a solução de alguns problemas estudados em sala durante as aulas sobre métodos de busca. Foi utilizado nos códigos o JAR buscaJava disponibilizado pelo professor (ele encontra-se dentro da pasta lib).
 ---
 ## Problema da Jarra
 Há duas jarras, uma jarra1 com 4 litros e outra jarra2 com 3 litros, também há uma torneira que jorra água infinitamente. o problema é deixar 2 litros em alguma das jarras.
@@ -41,10 +41,9 @@ Há duas jarras, uma jarra1 com 4 litros e outra jarra2 com 3 litros, também h�
     4) levarCarneiro
 3) restrições ➜ ehValido
     1) H != C && C != A ➜ Carneiro não pode ficar na mesma margem que a Alface sem o Homem
-    2)  H != L && L != C ➜ Lobo e o Carneiro não podem ficar na mesma margem sem o Homem
-    3) para que possa ocorrer uma travessia o homem e quem será transportado tem que estarem na mesma margem ➜ H == L || H == A || H ==C
+    2) H != L && L != C ➜ Lobo e o Carneiro não podem ficar na mesma margem sem o Homem
+    3) H == L || H == A || H ==C ➜ para que possa ocorrer uma travessia o homem e quem será transportado tem que estarem na mesma margem 
 4) visitados 
     - armazenar os estados já visitados
-    - concatenar e transformar em uma string as 4 variaveis
 5) função objetivo
     -  H == 'd'&& L == 'd' && A == 'd' && C == 'd'➜ todos na margem direita do rio
