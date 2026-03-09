@@ -37,7 +37,34 @@
       ```
 3) L7 = { W ∈ { a,b}+ | ab é uma subpalavra de W}
     - M7 = ({a,b}, {q0,q1,q2}, $\sigma$ ,q0,{q2})
+    - ```mermaid
+        graph LR;
+          q0--|a|--> q1;
+          q0--|b|-->q0;
+          q1--|b|--> q2;
+          q1--|a|-->q1;
+          q2 --|a,b|--> q2;
+      ```
 4) L8 = { W ∈ {a,b}+ | W tem subpalavra aaa}
      - M8 = ({a,b}, {q0,q1,q2}, $\sigma$, q0, {q3})
+     - ```mermaid
+          graph LR;
+          q0--|a|--> q1;
+          q0--|b|-->q0;
+          q1--|a|--> q2;
+          q1--|b|-->q0;
+          q2--|a|--> q3;
+          q2--|b|-->q0;
+          q3--|a,b|-->q3;
+      ```
 5) L9 = { W ∈ {1,0}+ | W tem sufixo 10}
-     - M9 = ({0,1}, {q0,q1,q2}, $\sigma$, q0, {q2}) 
+     - M9 = ({0,1}, {q0,q1,q2}, $\sigma$, q0, {q2})
+     - ```mermaid
+        graph LR;
+          q0--|0|--> q0;
+          q0--|1|--> q1;
+          q1--|0|--> q2;
+          q1--|1|--> q1;
+          q2--|1|--> q1;
+          q2--|0|--> q0;
+      ```
