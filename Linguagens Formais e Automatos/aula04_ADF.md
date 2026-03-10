@@ -2,19 +2,34 @@
 - é um sistema de estados finitos
   - um modelo matemático de sistemas com entradas e saídas discretas
   - esse sistema pode assumir um número finito e conhecido de estados
-  - cada estado mantém somente as informações passadas necessárias para determinar a ação para a próxima entrada --> não possui memória de trabalho
-  - para armazenar informações, o AFD usa o conceitos de estados
-- é
-- ...
-- é composta por 3 partes:
+  - cada estado mantém somente as informações passadas necessárias para determinar a ação para a próxima entrada 🡺 não possui memória de trabalho
+- para armazenar informações, o AFD usa o conceitos de estados
+  - os estados são representados por elipses ou circulos
+    - são nomeados de 0,1,2...ou A,B,C... ou q0,q1,q2,...
+    -  transições entre estados são representadas por arcos que os ligam e têm um sentido
+    -  nas transições é indicado o evento que proporciona a mudança de estado
+- AFD é composta por 3 partes:
   - **fita de entrada**
+    - dispositivo de entrada que contém o dado a ser processado
+    - fita é finita à esquerda e infinita à direita
+    - cada célula da fita armazena um símbolo pertencente a um alfabeto de entrada
+    - não é possível gravar sobre a fita  🡺 somente leitura de um símbolo por vez
+    - inicialmente a palavra de entrada ocupa toda fita.
   - **unidade de controle**
+    - reflete o estado corrente da máquina
+    - possui uma unidade de leitura (cabeça da fita) que acessa uma célula da fita de cada vez e movimenta-se exclusivamente para a direita (uma célula)
+    - a unidade de leitura sempre inicia à esquerda da fita 
   - **programa ou função de transição ou função programa ($\sigma$)**
     - pode ser representada através de : diagrama, tabela, notação
     - comanda as leituras e define o estado da máquina
     - é uma função parcial (cada elemento do domínio está relacionado com no máximo um elemento do contradomínio - estado e símbolo)
     - determina o novo estado do autômato
-- formalmente um AFD é uma 5-upla
+- formalmente um AFD é uma 5-upla M = { $\sum$, Q, $\sigma$, q0, F} em que :
+    -  $\sum$ =  alfabeto de entrada
+    -  Q = conjunto dos estados possíveis do autômato (conjunto finito)
+    -  $\sigma$ =  função programa ou função transição ou programa, definida: $\sigma$ = Q x $\sum$ 🡺 Q é uma função parcial
+    -  q0 = estado inicial
+    -  F = conjunto de estados finais
 - sempre para ao processar qualquer palavra
 - a parada de um autômato pode ser de duas maneiras: aceitando ou rejeitando a palavra W
 - condições de parada:
