@@ -36,3 +36,15 @@
    - processa o último símbolo da fita e assume um estado final = **aceita**
    - processa o último símbolo da fita e assume um estado não final = **rejeita**
    - função programa indefinida para o argumento = **rejeita**
+
+### Função Programa Estendida, Computação
+- é usada para mostra formalmente a computação de um AF.
+- seja um AFD  M = { $\sum$, Q, $\sigma$, q0, F}, a função Programa Estendida é denotada por : $\underline{\sigma} : Q x \sum* 🡺 Q$
+  - $\sigma*$ ou $\underline{\sigma}$ representam a Função Programa Estendida
+  - A função é indutivamente definida:
+      - $\underline{\sigma} (q,\varepsilon)=q$
+      - $\underline{\sigma} (q,aw)=\underline{\sigma}(\sigma(q,a),w)$
+        - aw = palavra com pelo menos um caractere
+        - a = primeiro caractere, w = restante da palavra
+  - Portanto $\underline{\sigma}$ consiste na sucessiva aplicação da $\sigma$ à palavra de entrada.
+  - W é aceita se no final da função programa estendida o resultado for um estado final
