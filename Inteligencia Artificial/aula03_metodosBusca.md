@@ -1,18 +1,3 @@
-### Revisão 
-- IA ➜ metodologia e técnica/método para projeção e construção de **sistemas com compartamentos inteligentes**
-    - base de conhecimento (PROLOG; SMA ; RNA)
-        - estruturada = banco de dados
-        - não estrurada  fatos, regras, experiência
-    -  motores de raciocínio (Métodos de busca ; Sistemas Multi Agentes)
-        - dedução ou indução
-          - profundidade e largura (força bruta)
-          - subida de encosta, guloso, A*, Algoritmos Genéricos (heurísticas (dica))
-    - aprendizado de máquina ou reconhecimento de padrão por amostra (redes neurais articiais)
-        - repetição e volume de amostras
-- tipos de problemas adequado para IA
-    - diagnóstico ➜ reconhecimento de padrões (substituir o especialista)
-    - 'empacotamento' ➜ descobrir o estado final e/ou os passos até o estado final
---- 
 # MOTORES DE RACIOCÍNIO - métodos de busca
 - algortimo que buscam solução de problema
     - busca de força bruta (mais processamento e mais consumo de memória) ➜ SEMPRE CHEGA NA SOLUÇÃO MELHOR
@@ -29,7 +14,8 @@
 * Sua modelagem e código esta na pasta CodigosMetBusca
 
 ---
-### aula 05/03
+
+### ➤ aula 05/03
 - para mudanças de estados sempre fazer 3 perguntas:
   - 1) heValido
     2) já foi visitado
@@ -62,7 +48,8 @@
     -  qual é a sequencia de passos necessários para levar todos para a outra margem.
 - Sua modelagem e código está na pasta CodigosMetBusca
 --- 
-### aula 06/03
+
+### ➤ aula 06/03
 #### Estrutura de dados - revisão
 - equals()
     - é chamado quando utiliza equals, contains, indexOf  ➜ principalmente em listas
@@ -72,7 +59,8 @@
     - principalmente no hashSet().
 - variavel com final na frente é para impedir que o programador mexa na matriz original , sempre vai obriga-lo a fazer um clone
 ---
-### aula 07/03
+
+### ➤ aula 13/03
 - pesquisar sobre IA generativa
     - LLM (Large Language Models) = base de conhecimento da IA
     - transformes
@@ -90,3 +78,53 @@
   1) avaliar restrições
   2) avaliar coluna
   3) avaliar box
+---
+
+### ➤ aula 14/03
+- O que foi trabalhado até agora em **Métodos de busca**
+    - cega = força bruta
+        - dedutivo ➜ profundidade
+            - pilha (recursiva S.O)
+            - visitados 
+        - largura/amplitude
+            - fila      { árvore
+            - visitados { completa
+    - Heuristicos = informação = dica ➜ **Próximas aulas**
+## HEURISTICA
+- custo real - g(n), quanto ele consome e gasta para percorrer um caminho,
+    - sempre procura seguir pelo caminho de menor custo, não que ele seja o melhor ou mais adequado (exemplo ir de sm para poa por são pedro)
+- custo estimado/heurístico - h(n) ➜ alguém estimou ou através de cálculos matemáticos os custos para fazer os caminhos = dica
+- nem sempre as dicas dadas geram/proporcionam o melhor caminho
+- 3 tipo que serão estudados
+#### subida de encosta/montanha (climb hill)
+- profundidade ➜ pilha recursiva
+- visitados
+- custo real - g(n) 
+#### Guloso
+- amplitude/largura ➜ fila
+- visitados
+- custo estimado h(n) ➜ se preocupa com as dicas forncecidas e dentro delas escolhe a menor
+    - antes de definir o proximo passo dentro da arvore sempre olha os tios do pai, se o tio tiver um custo menor abre a arvore dele tambem e verifica se o caminho tem custo menor, se não tiver volta para onde estava
+### A* 
+- amplitude ➜ fila
+- visitados
+- combinação = custo real (acumulado) + custo estimado
+    - aumenta o processamento mas "vale a pena" 
+
+            
+---
+### REVISÃO SOBRE IA
+- IA ➜ metodologia e técnica/método para projeção e construção de **sistemas com compartamentos inteligentes**
+    - base de conhecimento (PROLOG; SMA ; RNA)
+        - estruturada = banco de dados
+        - não estrurada  fatos, regras, experiência
+    -  motores de raciocínio (Métodos de busca ; Sistemas Multi Agentes)
+        - dedução ou indução
+          - profundidade e largura (força bruta)
+          - subida de encosta, guloso, A*, Algoritmos Genéricos (heurísticas (dica))
+    - aprendizado de máquina ou reconhecimento de padrão por amostra (redes neurais articiais)
+        - repetição e volume de amostras
+    - tipos de problemas adequado para IA
+        - diagnóstico ➜ reconhecimento de padrões (substituir o especialista)
+        - 'empacotamento' ➜ descobrir o estado final e/ou os passos até o estado final
+--- 
