@@ -1,5 +1,10 @@
 # VISÃO GERAL - REVISÃO
-## Modelagem de sistema de software
+- itens abordados nessa revisão:
+    - Modelagem
+    - UML
+    - Processo de desenvolvimento
+    - Participantes do projeto
+## ➤ Modelagem de sistema de software
 - complexeidade de desenvolvimento de um software aumenta à medida que o tamanho do sistema cresce
 - para sistemas mais complexo é necessário planejamento inicial ou desenvolvimento de um modelo
 #### Motivos para utilizar modelos
@@ -47,7 +52,7 @@
   - objetos compostos por outros objetos
   - exemplo: classe pessoa é composta pela classe telefone
 ---
-## UML E visões de um sistema
+## ➤ UML e visões de um sistema
 - Linguagem de Modelagem Unificada (UML) seus autores sugerem que um sistema pode ser descrito por cinco visões interdependentes desse sistema
 ### Visões de um sistema
 - o desenvolvimento do sistema do software complexo demanda que seus desenvolvedores tenham a possibilidade de examinar e estudar esses sistema a partir de perspectivas diversas
@@ -75,7 +80,7 @@
 
 ---
 
-## Processo de desenvolvimento de software
+## ➤ Processo de desenvolvimento de software
 
 ```mermaid
     graph LR;
@@ -120,7 +125,7 @@
    - manuais do sistema
    - treinamento dos usuários
 ---
-## Participantes do processo
+## ➤ Participantes do processo
 #### gerente do projeto
 - responsável pela gerência das atividades na construção do sistema
     - exemplo: orçamento do projeto, estimar o tempo para o desnevolvimento do sistema, ...
