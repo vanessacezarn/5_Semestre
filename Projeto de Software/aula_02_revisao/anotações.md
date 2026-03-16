@@ -136,6 +136,14 @@
 -  deve ser capaz de tomar decisões técnicas detalhadas 
 #### Programadores
 - responsável pela implementação do sistema
-#### Especialistas do domínio
-### Avaliadores de qualidade
+#### Especialistas do domínio ou de negócio
+- indivíduo que possui conhecimento acerca da área ou do negócio em que o sistema em desenvolvimento estará inserido
+- termo mais amplo que especialista de domínio é cliente
+- dois tipos de cliente:
+    - cliente usuário: indivíduo que efetivamente utiliza o sistema
+        - geralmente é quem o analista de sistemas interage para levantar os requisitos do sistema
+    - cliente contratante : indivíduo que solicita o desenvolvimento do sistema
+#### Avaliadores de qualidade
+- desempenho e confiabilidade são exemplos de características que devem ser encontrada no software
+- asseguram a adequação do processo de desenvolvimento e do produto de software sendo desenvolvido aos padrões de qualidade estabelecidos pela organização
 ---
