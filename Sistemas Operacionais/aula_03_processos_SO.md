@@ -10,6 +10,10 @@
 #### Mecanismos de interrupções
 - permite que um controlador de periféricos chame a atenção do processador
 - interrupção sinaliza a ocorrência de algum evento
+  - desvia a execução da posição atual para uma outra rotina
+  - **tratador de interrupção** ➜ realiza as ações necessárias em função da ocorrência da interrupção ➜ quando termina volta à rotina interrompida.
+  - pode ser ativada por hardware ou software
+- alguns processadores salvam automaticamente os registradores quando ocorre uma interrupção; outros salvam apenas alguns e a rotina de interrupção encarrega-se de salvar os demais
 - ...
 - diagrama de tempo de uma operação E/S:
 <div align="center">
