@@ -109,44 +109,12 @@
 - amplitude ➜ fila
 - visitados
 - combinação = custo real (acumulado) + custo estimado
-    - aumenta o processamento mas "vale a pena" 
-
-            
+    - aumenta o processamento mas "vale a pena"             
 ---
-# REVISÃO
-## ➥ MÉTODOS DE BUSCA
-- Métodos de busca
-    - busca o que? ➜ busca soluções para problemas
-    - o que seriam essas soluções?
-        - gerar ou atingir Estado(s) desejado(s)
-        - gerar ou produzir passo-a-passo até o Estado(s) desejados(s)
-    - não faz diagnóstico, ou seja, ela resolve os problemas de 'empacotamento' 
-
-## ➥ IA
-metodologia e técnica/método para projeção e construção de **sistemas com compartamentos inteligentes**
-
-#### ⮱ Base de Conhecimento (PROLOG; SMA ; RNA)
-- estruturada = banco de dados
-- não estrurada  fatos, regras, experiência
-####  ⮱ Motores de Raciocínio (Métodos de busca ; Sistemas Multi Agentes) ➜ DEDUÇÃO e INDUÇÃO
-- ALGORITMOS DE BUSCA    
-  - força bruta ou cega (dedução)
-    - profundidade  ➜ pilha
-    - largura/amplitude ➜ fila
-  - informado ou heurísticos
-    - CUSTOS
-        - real g(n) - o quanto realmente custa para chegar 
-        - estimado ou heurístico h(n) - estimado pela especialista ➜ pode ser admissível ou inadimissível
-    - Métodos
-        - Subida de Encosta ➜ baseado no profundidade e foca no custo real
-        - Guloso ➜ baseado no amplitude e foca no custo estimado
-        - A* ➜ baseado no amplitude e soma custo real (acumulado) com custo estimado ➜ com isso, pode corrigir a heurística
-            - a heurística é **estática** 
-        - Algoritmos Genéricos (heurísticas (dica)) ➜ 
-#### ⮱ Aprendizado de Máquina ou reconhecimento de padrão por amostra (redes neurais articiais)
-- repetição e volume de amostras
-
-### 🡆 Tipos de problemas adequado para IA
-- diagnóstico ➜ reconhecimento de padrões (substituir o especialista)
-- 'empacotamento' ➜ descobrir o estado final e/ou os passos até o estado final (não se sabe como chegar no estado final) 
---- 
+### ➤ aula 27/03
+- Trabalhando no código do Mapa da Romenia
+- revisão dos métodos de busca
+- para avaliar algoritmos de busca utiliza-se 4 critérios principais focados em:
+    - completude: o algoritmo garante encontrar uma solução caso ela exista
+    - complexidade de tempo: quanto tempo ou nós o algoritmo leva para encontar a solução
+    - * pesquisar para os métodos estudados:
