@@ -1,15 +1,19 @@
-* DISCUSSÃO SOBRE O ESTUDO DIRIGIDO DA AULA ANTERIOR
-* análise de um Sistema Operacional = nem todos os sistema possuem a mesma estrutura, mas existem alguns aspectos comuns
+# ESTRUTURA DO SISTEMA OPERACIONAL
+* análise de um Sistema Operacional ➜ nem todos os sistema possuem a mesma estrutura, mas existem alguns aspectos comuns aos quais dão suporte
     * serviços fornecidos
     * interfaces fornecidas a usuários e programadores
     * componentes e interconexões
 <div align="center">
   <img width="474" height="444" alt="{DFC00E19-4100-422B-89D0-1B5B89FD5243}" src="https://github.com/user-attachments/assets/e8f4a087-795d-406a-ba8a-61742067e851" />
 </div>
-  
-### Mecanismos de interrupções
+
+---  
+
+## Mecanismos de interrupções
 * um contralor de periférico que precisa enviar dados ao processador pode:
-* ...
+   * aguardar até que o processador esteja livre e o mesmo o consulte para verificar se há alguma informação para o processador
+   * gerar uma interrução (IRQ- requisição de interrupção) por meio do barramento de controle
+* **O MECANISMO DE INTERRUPÇÕES TORNA EFICIENTE A INTERAÇÃO DO PROCESSADOR COM OS PERIFÉRICOS E PERMITE I/O ASSÍNCRONA**
 * sinalizar ocorrência de eventos
 * tratador de interrupção
 * interrupção pode ser ocasionada por hardware, software ou por uma exceção (exemplo: overflow, divisão por erro)
@@ -18,21 +22,33 @@
     * transfere o controle para o tratador - salva o contexto da execução
     * desvia controle para o tratador
     * retorna execução - restaura o contexto de execução
-* chamada de sistema = processo em que usuário solicita serviços ao sistema operacional --> interrupções de software (traps)
-### PROTEÇÃO
-*...
+* chamada de sistema = processo em que usuário solicita serviços ao sistema operacional ➜ interrupções de software (traps)
+
+---
+
+## Proteção
+- o SO deve garantir a correta utilização dos recursos computacionais e propiciar a execução das aplicações no computador
+- são necessários mecanismos de proteção para que as aplicações não consigam acessar o hardware diretamente
+   - esse acesso é mediado pelo SO 
 - de memória
 - de CPU
-#### Modo DUAL de operação
+- Há diferentes modos de execução/privilégios que constituem o Modo de Dual de operação
+#### Modo Dual de operação
 - a arquitetura de processadores oferece mecanismos para diferenciar dois modos de operação
     - modo supervisor (privilegiado)
+       - modo de execução sistema operacional - instruções privilegiadas
+       - execução de todas as instruções do processador 
     - modo usuário
+        - execução dos processos usuários
+        -  somente um subconjunto de instruções do processador, registradores e portas de I/O estão disponíveis
         - caso o código em execução tenta executar uma instrução não disponível, será gerada uma exceção
 - chaveamento de modos
     - interrupção (modo usuário ➜  modo supervisor)
     - instrução (modo supervisor ➜  modo usuário)
 
-# Estrutura dos Sistemas Operacionais
+---
+
+## Estrutura dos Sistemas Operacionais
 - SO deve ser divido em pequenos componentes e não ser um sistema monolítico
 ## principais componentes:
 - núcleo (kernel) ➜ gerência do processador, gerência da memória principal (RAM) e comunicação
@@ -89,7 +105,9 @@
 2) Realizar uma pesquisa bibliográfica sobre a Estrutura do Sistema Operacional escolhido.
 3) Descrever sua estrutura e cada um de seus componentes.
 4) Representar graficamente esta estrutura.
+
 ---
+
 ## Chamadas ao sistema (System call)
 - utilizada para que as rotinas oferecidas pelo núcleo possam acessar ao hardware
 - fornecem a interface entre um processo e o sistema operacional, ou seja, é a interface de programação para os serviços fornecidos pelo SO
