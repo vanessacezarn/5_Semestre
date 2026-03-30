@@ -4,7 +4,7 @@
     * interfaces fornecidas a usuários e programadores
     * componentes e interconexões
 <div align="center">
-  <img width="474" height="444" alt="{DFC00E19-4100-422B-89D0-1B5B89FD5243}" src="https://github.com/user-attachments/assets/e8f4a087-795d-406a-ba8a-61742067e851" />
+  <img width="300" height="270" alt="{DFC00E19-4100-422B-89D0-1B5B89FD5243}" src="https://github.com/user-attachments/assets/e8f4a087-795d-406a-ba8a-61742067e851" />
 </div>
 
 ---  
@@ -49,55 +49,127 @@
 ---
 
 ## Estrutura dos Sistemas Operacionais
-- SO deve ser divido em pequenos componentes e não ser um sistema monolítico
-## principais componentes:
+SO deve ser divido em pequenos componentes e não ser um sistema monolítico
+#### principais componentes:
 - núcleo (kernel) ➜ gerência do processador, gerência da memória principal (RAM) e comunicação
-- drivers ➜ códigos específicos para acessar os dispositivos físicos, exemplos: disco rígido, porta USB
+- drivers ➜ códigos específicos para acessar os dispositivos físicos, exemplos: disco rígido, porta USB, placa de vídeo
 - códigos de inicialização ➜ Reconhecer, testar e configurar os dispositivos instalados. Carregar o núcleo do SO e iniciar a execução
 - programas utilitários ➜ funcionalidades complementares do SO
 
 ### KERNEL
 - é a parte do SO executada com interrupções desabilitadas(enquanto tiver executando não responde a interrupções) e no modo privilegiados (todos comando estão disponíveis)
+- nos trechos críticos não há interrupções, ex: inserção de um processo na fila de prontos
 - pode ser monolíticos
-    - toda e qualquer parte do SO é executada da maneira indivisível
+    - quanto todos os componentes do SO são executados com interrupções desabilitadas e no modo privilegiado
+    -  toda e qualquer parte do SO é executada da maneira indivisível
       - cada trap (chamada do sistema) ou interrupção desabilita o sistema de interrupções 
     - desvantagens:
       - pode haver muita espera
       - complexidade da estrutura de organização do kernel
-- ...
+- é um pequeno monitor monolítico que recebe o controle quando ocorrem chamadas ao sistema ou interrupções
+- os serviços são implementados fora do kernel
+   - por processos específicos
+   - um processo para controlar o dispositivo = driver de dispositivo
+- mantém o descritor do processo e implementa funções para sincronização e comunicação
+- pode ser microkernel ou monitor monolítico 
  
-## como os componentes são combinados e interconectados
-### estruta simples
+### Como os componentes são combinados e interconectados
+#### ➥ Estruta simples
 - sistemas sem estrutura bem definida
-- iniciaram pequenos, simples e limitados ➜ cresceram
+   - iniciaram pequenos, simples e limitados ➜ cresceram
+   - exemplo: MS-DOS
+      - fornecer funcionalidade máxima no menor espaço possível, hardware base ficou acessível, programas aplicativos podem acessar as rotinas básicas de I/O para escrever diretamente na tela e nas unidades de disco 
 <div align="center">
-  <img width="645" height="371" alt="{E9F70F38-CB8B-4BA2-8C84-50E8D5AE702E}" src="https://github.com/user-attachments/assets/2e1690c5-0e30-4d38-8baf-6f017d88d438" />
+  <img width="400" height="196" alt="{E9F70F38-CB8B-4BA2-8C84-50E8D5AE702E}" src="https://github.com/user-attachments/assets/2e1690c5-0e30-4d38-8baf-6f017d88d438" />
 </div>
-- estrutura do unix
 
-### camadas
-- forma de modularização de um sistema
-- é uma implementação de um objeto abstrato
-- consiste em estruturas de dados e rotinas que podem ser chamadas por chamadas superiores
-- ...
+##### Estrutura do Unix
+- o Unix originalmente foi limitado pela funcionalidade de hardware
+- dividido em duas partes
+   - Kernel
+      - inclui interfaces e drivers de dispositivos (adicionados com a evolução)
+      - está abaixo da interface de chamadas ao sistema e acima do hardware
+      - fornece: sistemas de arquivos, escalonamento de CPU, gerência de memória, funções do SO através de chamadas ao sistema
+   - Programas de sistema
+<div align="center">
+   <img width="554" height="279" alt="image" src="https://github.com/user-attachments/assets/e3305bad-5af3-447a-89fa-0807353b29d6" />
+
+</div>
+
+#### ➥ Camadas
+- forma de **modularização** de um sistema
+- uma camada de SO
+   - é uma implementação de um objeto abstrato
+   - consiste em estruturas de dados e rotinas que podem ser chamadas por chamadas superiores
+- as camadas são construídas de forma que somente utilizem os serviços das camadas de nível mais baixo
+   - simplifica a verificação e depuração do sistema 
 - menos eficientes devido à hierarquia de camadas
 - permite maior controle do hardware em relaçao à abordagem simples
+- a primeira camada pode ser depurada sem preocupação com o resto do sistema, porque utiliza somente o hardware básico para implementar suas funções
+- a primeira camada pode ser depurada sem preocupação com o resto do sistema, porque utiliza somente o hardware básico para implementar suas funções
+- dificuldade: definição adequada das camadas
+- tendem a ser menos eficiente que outros tipos ➜ em cada camada, os parâmetros podem ser modificados, os dados precisam ser transferidos...custos são acrescentados ➜ maior tempo na chamada ao sistema
+- OS/2
+   - acrescentou camadas, operações multitarefas e em modo dual
+   - não permite ao usuário acesso aos recursos de baixo nível
+   - sistema operacional tem mais controle sobre o hardware e programas em execução
+- MULTICS
+- Windows NT(parcialmente)
+   - implementa camada inferior de abstração do harware - HAL(Hardware Abstraction Layer) 
 
-### microkernels ou micronúcleo
+<div align="center">
+   <img width="369" height="235" alt="image" src="https://github.com/user-attachments/assets/5edb3a2c-ba44-4518-bfb7-38ecf9b3a083" />
+
+</div>
+
+#### ➥ Microkernels ou micronúcleo
 - com a expansão do unix, o kernel tornou-se grande e difícil de gerenciar
-- 1980 - sistema operacional mach ➜ abordagem microkernel
+- 1980 - sistema operacional Mach (Carnegie Mellon University) ➜ abordagem microkernel
     - implementa  somente os componentes essenciais do SO no Kernel, os demais são implementados como programas de sisemas e de usuário
-    - retirou-se do kernel o código de alto nível
+    - retirou-se do kernel o código de 'alto nível'
     - os componentes do SO comunica-se por meio de trocas de mensagens
     - kernel menor
     - facilidade de manutenção
 - fornecem:
     - gerência mínima de memória e processos
     - um recurso de comunicação entre programas do usuário e serviços que estão em execução também no espaço de usuário
-    - 
+- proporcionam:
+   - facilidade de expansão do sistema ➜ novos serviços são adicionados ao espaço do usuário
+   - modificações facilitadas no kernel
+   - maior segurança e confiabilidade em caso de falhas
+- possibilitar a comunicação entre o programa cliente e os diversos serviços disponibilizados
+   - trocas de mensagens
+   - o programa cliente e o serviço não interagem diretamente e sim via microkernel
+- sistemas baseados no kernel do Mach
+   - UNIX Digital
+   - Apple MacOS X     
 
-### módulos
-### máquinas virtuais
+<div align="center">
+   <img width="436" height="261" alt="image" src="https://github.com/user-attachments/assets/f659ced5-ca5b-4489-847d-106bb4720de6" />
+
+</div>
+
+#### ➥ Módulos
+- POO ➜ Kernel modular
+- há um kernel básico e módulos carregáveis dinamicamente
+- a interface entre os módulos é claramente definida
+- Solaris, Linux, MacOS X
+- flexibilidade 
+
+### Máquinas Virtuais
+- o SO possibilita que um processo 'possua' seu próprio processador com sua própia memória ➜ técnicas de escalonamento e memória virtual
+- cada processo recebe uma cópia do computador básico
+- o computador físico compartilha seus recursos para que isto ocorra ➜ escalonamento de CPU pode criar a aparência que cada usuário possui seu própio proccessador
+- atualmente é utilizada para portabilidade dos sistemas
+- vantagens: isolamento dos recursos da máquina virtual e testes
+- desvantagens: difícil de implementar
+
+<div align="center">
+   <img width="274" height="197" alt="image" src="https://github.com/user-attachments/assets/41e678d3-c1c4-474b-985e-6b608e6e5bca" />
+
+</div>
+   
+- abordagens: camadas, microkernel, modulos e máquinas virtuais não são mutuamente exclusivas     
 
 ---
 ## Atividade para próxima aula - estrutura de sistemas operacionais
