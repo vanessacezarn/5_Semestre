@@ -4,12 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Formulario</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </head>
 <body>
     <h1>Cadastro de produto</h1>
     <form method="POST" th:action="@{/produto/salvar}" th:object="${produto}">
+        <input type="hidden" th:field="*{id}">
         <label>Nome: </label><br>
-        <input type="text" name="nome" required th:field="*{nome}"><br>
+        <input type="text" name="nome"  th:field="*{nome}"><br>
         <label>Descrição: </label><br>
         <input type="text" name="descricao" th:field="*{descricao}"><br>
         <label>Valor:</label><br>
@@ -21,6 +24,7 @@
         <br>
         <input type="submit" value="Limpar">
         <input type="submit" value="Cadastrar">
+
 
 
     </form>
