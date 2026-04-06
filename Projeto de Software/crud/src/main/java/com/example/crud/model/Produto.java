@@ -13,6 +13,9 @@ public class Produto {
     private double valor;
     private int quantidade;
     private String imagem;
+    @ManyToOne
+    @JoinColumn(name = "categoria_id")
+    private Categoria categoria;
 
     public int getId() {
         return id;
@@ -62,9 +65,16 @@ public class Produto {
         this.imagem = imagem;
     }
 
-    public Produto() {
+    public Categoria getCategoria() {
+        return categoria;
     }
 
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
+
+    public Produto() {
+    }
 
     public Produto(int id, String nome, String descricao, double valor, int quantidade, String imagem) {
         this.id = id;
@@ -81,6 +91,25 @@ public class Produto {
         this.valor = valor;
         this.quantidade = quantidade;
         this.imagem = imagem;
+    }
+
+    public Produto(int id, String nome, String descricao, double valor, int quantidade, String imagem, Categoria categoria) {
+        this.id = id;
+        this.nome = nome;
+        this.descricao = descricao;
+        this.valor = valor;
+        this.quantidade = quantidade;
+        this.imagem = imagem;
+        this.categoria = categoria;
+    }
+
+    public Produto(String nome, String descricao, double valor, int quantidade, String imagem, Categoria categoria) {
+        this.nome = nome;
+        this.descricao = descricao;
+        this.valor = valor;
+        this.quantidade = quantidade;
+        this.imagem = imagem;
+        this.categoria = categoria;
     }
 
     @Override
