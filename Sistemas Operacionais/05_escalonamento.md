@@ -24,7 +24,7 @@
 - executado pelo Escalonador de Curto Prazo
 - escolhe um processo na **fila de processos prontos**
 - objetivos
-  - aumentar a produção do sistema
+  - aumentar a produção do sistema (througput)
   - diminuir o tempo de resposta aos usuários
   - manter o processador ocupado o máximo possível
   - diminuir o tempo médio de espera na fila do processador (turnaroundtime)
@@ -32,7 +32,7 @@
   - fila de prioridade
   - lista encadeada desordenada
   - árvore
-- situações que geram escolham de um processo
+- situações que geram escolha de um processo
 <div align="center">
   <img width="587" height="236" alt="image" src="https://github.com/user-attachments/assets/e69f66ab-b101-4878-8141-fdf07f6b6dad" />
 
@@ -40,10 +40,8 @@
 
 ---
 ### Escalonamento
-- escalonamento pode ser:
 #### Preemptivo
-- as interrupções estão habilitadas
-- a execução pode ser interrompida
+- as interrupções estão habilitadas ➜ a execução pode ser interrompida
 - há custo associado à coordenação do acesso aos dados compartilhados (parar e quando voltar ter que ler novamente)
 - influencia no projeto do kernel do SO
   - chamada ao sistema: o kernel pode estar ocupado com outro processo
@@ -53,9 +51,9 @@
   - simplicidade do kernel
   - versões do Unix
   - não eficiente para sistemas de tempo real
-    - sistema de tempo real --> sistema responde em um tempo máximo pré-definido
+    - sistema de tempo real ➜ sistema responde em um tempo máximo pré-definido
 - há possibilidade de habilitar/desabilitar as interrupções a fim de proteger uma seção de código
-#### não-preemptivo ou cooperativo
+#### Não-preemptivo ou Cooperativo
 - o processo, após ter a CPU alocada, mantém o uso até liberá-la
 - término da execução
 - passagem para o estado Em espera
@@ -71,7 +69,9 @@
     - mudança para posição adequada no programa do usuário conforme o Program Counter (PC)
 ---
 ### Critérios de escalonamento
-- ...
+- são critérios utilizados para comparação de algoritmos/políticas de escalonamento
+- o escalonamento procura maximizar os seguintes critérios
+   - 
 - escalonamento procura minimizar os seguintes critérios:
   - tempo de retorno: tempo entre a submissão e a conclusão do processo, envolve o tempo na fila de prontos, em execução, usando  dispositivos
   - tempo de espera
