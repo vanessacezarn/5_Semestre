@@ -172,13 +172,6 @@ SO deve ser divido em pequenos componentes e não ser um sistema monolítico
 - abordagens: camadas, microkernel, modulos e máquinas virtuais não são mutuamente exclusivas     
 
 ---
-## Atividade para próxima aula - estrutura de sistemas operacionais
-1) Cada grupo escolhe um sistema operacional (Mac OS, Solaris, Linux, Windows...) para estudar a estrutura de seus componentes.
-2) Realizar uma pesquisa bibliográfica sobre a Estrutura do Sistema Operacional escolhido.
-3) Descrever sua estrutura e cada um de seus componentes.
-4) Representar graficamente esta estrutura.
-
----
 
 ## Chamadas ao sistema (System call)
 - utilizada para que as rotinas oferecidas pelo núcleo possam acessar ao hardware
@@ -198,25 +191,63 @@ SO deve ser divido em pequenos componentes e não ser um sistema monolítico
          6) **fechar** o arquivo original.txt
          7) **fechar** o arquivo copia.txt
 - a API para as chamadas ao sistema invocam as chamadas ao Kernel do SO
+- a maioria das linguagens oferece interface mais simples:
+   - detalhes da interface do SO são ocultos ao programador através do compilador e do pacote de suporte à execução
+   - não é necessário conhecer como a system call é implementada
+
+<div align="center">
+   imagem
+</div>
+
 - 3 métodos para passar parâmetros às chamadas
    - registradores (mais simples)
    - bloco ou tabela na memória e o endereço do bloco é passado ao registrados
    - inseridos (push) na pilha do sistema pelo programa e lidos/removidos (pop) pelo SO
    - * segunda e terceira não limitam a quantidade de parâmetros
-- 5 categorias de chamadas ao sistema
-   - controle de processo
-   - gerência de arquivos
-   - gerência de dispositivos
-   - manutenção de informações
-   - comunicação
-### Controle de processo
-### Gerência de arquivos
-- exemplos de chamadas: create/delete file, open, close, read, write,...
+### 5 categorias de chamadas ao sistema
+  
+
+#### ➥ Controle de processo
+- exemplo de chamadas: end, abort, load, execute, create/terminate process, get/set process attributes, wait for time, wait/signal event, allocate/free memory
+- MS-DOS ➜ monotarefa
+   - interpretador de comandos chamado quando o computador é iniciado
+   - executa novo programa sem criar um processo
+      - carrega programa na memória, gravando sobre si mesmo, para permitir maior quantidade possível de memória
+      - sistema define ponteiro de instruções para a primeira instrução
+      - programa executa até um erro acontecer ou parar
+   - pequena parte do interpretador, não sobreposta, recomeça a execução
+- UNIX ➜ multitarefa
+   - interpretador de comandos é chamado quando um usuário efetua o logon no sistema (shell do usuário é executado)
+      - shell continua a execução enquanto outro programa é executado
+   - para iniciar um processo, o shell executa a chamada ao sistema fork
+   - programa é carregado na memória pela chamada exec (o programa é executado)
+   - dependendo da forma que o comando foi emitido, o shell espera o processo ser finalizado ou executa o processo em 'segundo plano' (não pode receber entrada diretamente pelo teclado; o shell está livre para receber outras chamadas)
+   - processo terminado ➜ executa chamada 'exit' ➜ passa ao programa que o criou código de status zero ou código de erro diferente de zero
+<div align="center">
+   imagem
+</div>
+
+#### ➥ Gerência de arquivos
+- exemplos de chamadas: create/delete file, open, close, read, write, reposition, get file attributes, set file attributes
 - atributos de arquivos: nome, tipo, código de proteção, tamanho,...
-### Gerência de Dispositivos
-- exemplos de chamadas: request/release device, read, write, reposition, get/set, 
-### Gerência de informações
-### Comunicação
+#### ➥ Gerência de Dispositivos
+- exemplos de chamadas: request/release device, read, write, reposition, get/set device attributes, logically attach decives
+- programa em execução pode precisar de recursos adicionais para prosseguir ➜ memória, unidades de fita, acesso a arquivos
+- a similaridade entre dispositivos de I/O e arquivos é tão grande que muitos sistemas operacionais, como UNIX e MS-DOS, combinam os dois em uma estrutura de arquivo-dispositivo ➜ dispositivos de I/O são identificados por nomes de arquivos
+#### ➥ Gerência ou Manutenção de informações
+- refere-se às informações trocadas entre o programa de usuário e o sistema operacional
+   - chamadas ao sistema:
+      - data e hora atuais (get/set date, time)
+      - número de usuários atuais, versões do SO, memória livre
+      - sistemas operacionais mantém informações sobre todos os processos (get/set process/file/device/attributes)
+#### ➥ Comunicação
+- exemplo de chamadas: create, delete communication connection, send/receive messages, transfer status information, attach remote devices
+- modelo de troca de mensagens ➜ recurso de comunicação oferecido pelo SO
+- modelo de memória compartilhada ➜ os processos também são responsáveis por garantir a consistência da memória compartilhada
+#### EXEMPLOS DE CHAMADAS AO SISTEMA
+<div align="center">
+   imagem
+</div>
 
 
 

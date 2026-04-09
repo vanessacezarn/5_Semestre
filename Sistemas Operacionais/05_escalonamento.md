@@ -40,7 +40,7 @@
 
 ---
 ### Escalonamento
-#### Preemptivo
+#### ➤ Preemptivo
 - as interrupções estão habilitadas ➜ a execução pode ser interrompida
 - há custo associado à coordenação do acesso aos dados compartilhados (parar e quando voltar ter que ler novamente)
 - influencia no projeto do kernel do SO
@@ -53,7 +53,7 @@
   - não eficiente para sistemas de tempo real
     - sistema de tempo real ➜ sistema responde em um tempo máximo pré-definido
 - há possibilidade de habilitar/desabilitar as interrupções a fim de proteger uma seção de código
-#### Não-preemptivo ou Cooperativo
+#### ➤ Não-preemptivo ou Cooperativo
 - o processo, após ter a CPU alocada, mantém o uso até liberá-la
 - término da execução
 - passagem para o estado Em espera
@@ -70,17 +70,20 @@
 ---
 ### Critérios de escalonamento
 - são critérios utilizados para comparação de algoritmos/políticas de escalonamento
-- o escalonamento procura maximizar os seguintes critérios
-   - 
-- escalonamento procura minimizar os seguintes critérios:
+- o escalonamento procura **maximizar** os seguintes critérios
+  - utilização de CPU: deve ficar o maior tempo possível ocupada
+  - Throughput: número de processos terminados por unidade de tempo
+    - exemplo: 1 processo/hora | 10 processos/segundo
+- escalonamento procura **minimizar** os seguintes critérios:
   - tempo de retorno: tempo entre a submissão e a conclusão do processo, envolve o tempo na fila de prontos, em execução, usando  dispositivos
-  - tempo de espera
-  - tempo de resposta
+  - tempo de espera: tempo esperando na fila de processos prontos (não afeta operações de I/O)
+  - tempo de resposta: é o tempo entre a submissão e a primeira resposta do processo (não considera a velocidade do dispositivo de saída)
 ---
 ### Políticas de Escalonamento
+- constituem-se em algoritmos de escalonamento que selecionam quais processos devem utilizar a CPU em determinados instantes
 ---
-### Algoritmos de escalonamento
-#### First-Come, First-Served (FCFS) ou First-In, First-Out (FIFO)
+### ALGORITMOS DE ESCALONAMENTO
+#### ➤ First-Come, First-Served (FCFS) ou First-In, First-Out (FIFO)
 - é o algoritmo mais simples de implementar
   - processo que solicita a CPU primeiro ➜ recebe primeiro, ou seja, conforme os processos vão chegando são inseridos no fim da fila de prontos
 - é implementado por uma FIFO: um processo entra na fila de processos prontos e seu PCB é ligado ao final da fila
@@ -94,8 +97,16 @@
 
 - situação dinâmica
   - um processo limitado pela CPU: obtém e detém a CPU
+  - muitos processos limitados por I/O: terminam sua operação de I/O e passam para Prontos
+  - dispositivos de I/O ociosos
+  - processo limitado pela CPU termina e passa para operaçãõ I/O 
+  - todos os processos limitados por I/O são executados pois tem surtos curtos de CPU
+  - executam rapidamente e voltam para fila de I/O
+  - CPU ociosa
+  - processo limitado pela CPU mais uma vez vai para a fila de prontos e retorna para CPU
+  - processo limitado por I/O esperam na fila de prontos até a CPU estar disponível
 
-#### Shortest Job First - SJF
+#### ➤ Shortest Job First - SJF
 - para cada processo é associado a duração de seu próximo ciclo de surto de CPU
 - quando a CPU está disponível, o processo a ser escalonado é o que tem surto de menor duração
   - se houver empate usa-se o escalonamento FCFS
@@ -110,7 +121,7 @@
   - em sistemas batch, o usuário pode especificar esse tempo quando submete o job
   - pode-se fazer uma previsão: espera-se que o próximo ciclo de surto de CPU seja semelhante em duração aos anteriores
 
-#### Escalonamento por prioridade
+#### ➤ Escalonamento por prioridade
 - SJF é um caso de escalonamento por prioridade
   - prioridade é dada aos processos de menores ciclos de surtos de CPU
 - na política de escalonamento por Prioridade, uma prioridade é associada a cada processo e a CPU é alocada ao processo de mais alta prioridade
@@ -134,7 +145,7 @@
 - solução: técnica de envelhicimento (conhecida como aging)
   - consiste em aumentar gradativamente a prioridade dos processos que estão na fila de Prontos durante muito tempo, para favorecer sua execução 
 
-#### Escalonamento Round – Robin (RR) ou Revezamento Circular ou Fatia de Tempo
+#### ➤ Escalonamento Round – Robin (RR) ou Revezamento Circular ou Fatia de Tempo
 - adequado para sistemas de tempo compartilhado
 - é o escalonamento FCFS acrescido da preempção para alternar entre os processos
 - o sistema define um quantum de tempo(fatia): 10, 100ms
@@ -164,10 +175,27 @@
   - quantum muito pequeno ➜ compartilhamento de processador ➜ como se cada um dos n processos tivesse seu própio processador executando a 1/n da velocidade real do processador(execução com travamento)
 - tempo de retorno também depende do tamanho do quantum
 - 80% dos surtos de CPU < quantum
-#### Escalonamento por Múltiplas Filas
-- ...
-- 
-#### Escalonamento por Múltiplas Filas com realimentação
+#### ➤ Escalonamento por Múltiplas Filas
+- utilizado em casos onde os processos podem ser classificados em diferentes grupos, exemplo:
+  - processos de primeiro plano (interativos): podem ter prioridade em relação aos outros processos
+  - processos de segundo plano (batch): possuem diferentes tempos de resposta, portanto podem ter escalonamentos distintos
+- a fila de processos prontos é dividida em várias filas separadas por um dos critérios:
+  - prioridade
+  - tamanho
+  - tipo
+- cada fila possui seu própio algoritmo de escalonamento
+- deve haver escalonamento entre as filas
+  - geralmente preemptivo de prioridade baixa (fila do primeiro plano pode ter prioridade absoluta sobre a de segundo plano)
+  - tempo é fracionado entre as filas
+- exemplo de fila:
+  1) processo do sistema 
+  2) processo interativo
+  3) processo em batch
+  4) processo secundario
+    - prioridade mais alta é o pocesso do sistema
+  - processo na fila Batch só poderá ser executado se os processos das filas do sistema e interativos estiverem vazias
+  - caso um processo entrasse na fila, o processo em Batch seria interrompido
+#### ➤ Escalonamento por Múltiplas Filas com realimentação
 - no caso anterior, os processos não se movem entre as filas. Apesar de apresentar um baixo custo de escalonamento, não é um processo flexível.
 - nesse escalonamento:
   - processo se move entre as filas
@@ -175,9 +203,26 @@
 - se um processo utilizar surto de CPU excessivo, é movido para uma fila de menor prioridade
 - logo, os processos limitados por I/O estão nas filas de prioridade mais alta
 - possui técnica de envelhecimento: processo que espera demais na fila de baixa prioridade passa para uma fila de maior prioridade
+- exemplo: 3 filas - F0, F1, F2
+
 <div align="center">
   <img width="559" height="184" alt="image" src="https://github.com/user-attachments/assets/e5683bdb-d4fb-4294-991d-4fbca7dd13a0" />
 
 </div> 
+
+- executa todos os processos das filas nessa sequência: F0 ➜ F1 ➜ F2
+- se chegar um processo na F1, interrompe o da F2
+  - mesmo acontece se chegar um processo na F0
+- F2 somente executa quando F0 e F1 estiverem vazias
+- considerações sobre o exemplo:
+  - prioridade mais alta é dada aos processos com surto de CPU <= 8ms
+  - processos com surto de CPU entre 8 e 24ms são rapidamente atendidos
+  - processos com surto de CPU maior que 24ms vão para a f2
+  - processos limitados por I/O estão nas filas de prioridade mais alta
+- esse escalonador é definido pelos seguintes parâmetros:
+  - número de filas
+  - algoritmo de escalonamento para cada fila
+  - método para remover/rebaixar processos
+  - método para determinar em que fila entrará determinado processo
 
 
