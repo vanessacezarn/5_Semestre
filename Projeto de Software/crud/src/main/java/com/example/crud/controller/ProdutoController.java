@@ -1,7 +1,9 @@
 package com.example.crud.controller;
 
+import com.example.crud.model.Categoria;
 import com.example.crud.model.Produto;
 import com.example.crud.repository.ProdutoRepository;
+import com.example.crud.service.CategoriaService;
 import com.example.crud.service.ProdutoService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,15 +17,19 @@ import java.util.Optional;
 public class ProdutoController {
     private final ProdutoRepository produtoRepository;
     private final ProdutoService produtoService;
+    private final CategoriaService categoriaService;
 
-    public ProdutoController(ProdutoRepository produtoRepository, ProdutoService produtoService) {
+    public ProdutoController(ProdutoRepository produtoRepository, ProdutoService produtoService, CategoriaService categoriaService) {
         this.produtoRepository = produtoRepository;
         this.produtoService = produtoService;
+        this.categoriaService = categoriaService;
     }
 
     @GetMapping("/formulario")
     public String exibirFormulario(Model model) {
+        List<Categoria> categorias = categoriaService.listarTodas();
         model.addAttribute("produto", new Produto());
+        model.addAttribute("categorias", categorias);
         return "formulario";
     }
 
