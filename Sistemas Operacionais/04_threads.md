@@ -9,6 +9,10 @@
   - um fluxo de instrução é implementado através do Contador de Programa (PC) e do Stack Pointer (SP)
   - estruturas comuns compartilhadas entre os threads: código, dados, descritor de processo
   - vários fluxos de execução em um único processo
+<div align="center">
+  <img width="258" height="150" alt="image" src="https://github.com/user-attachments/assets/49909210-75b7-4017-9e17-a515028210ee" />
+</div>
+
   - processo leve
   - unidade básica de utilização da CPU
   - existem no interior de um processo
@@ -67,7 +71,7 @@
 - um thread é escalonado de cada vez
 
 <div align="center">
-  imagem
+  <img width="153" height="178" alt="image" src="https://github.com/user-attachments/assets/e944e3a9-ac5d-4aec-9c9b-2ed326b55525" />
 </div>
 
 #### ➥ 1:1 - Um-para-Um (one-to-one)
@@ -81,7 +85,9 @@
 - desempenho da aplicação ➜ depende do número de threads suportas pelo sistema
 
 <div align="center">
-  imagem
+  <img width="178" height="179" alt="image" src="https://github.com/user-attachments/assets/3a408ab2-4d2f-47a7-9f9e-a92015dc10b3" />
+  <img width="363" height="211" alt="image" src="https://github.com/user-attachments/assets/c561aa48-70cf-4b41-9a94-6d180600ecda" />
+
 </div>
 
 #### ➥ M:N - Muitos-para-Muitos (many-to-many)
@@ -95,7 +101,9 @@
 - há paralelismo
 
 <div align="center">
-  imagem
+  <img width="151" height="200" alt="image" src="https://github.com/user-attachments/assets/5d5a6be1-ee2a-4f4c-8135-c8b3fc0e609e" />
+  <img width="363" height="211" alt="image" src="https://github.com/user-attachments/assets/e6fae539-a3cc-420a-909b-cece84513608" />
+
 </div>
 
 ### Vantagens de Multithreads
@@ -126,7 +134,8 @@
 
 - estados da threads
 <div align="center">
-  imagem
+  <img width="461" height="300" alt="image" src="https://github.com/user-attachments/assets/e0a0f380-773c-4966-bf70-c258a530c86c" />
+
 </div>
 
 --- 
