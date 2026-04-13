@@ -65,11 +65,42 @@
 - proteção de memória
 
 #### ➥ Modelo de processo UNIX (Linux)
+- processos: 
+  - no Linux assim como em outros SO Unix-like, um processo é uma instância em execução de um programa
+  - cada processo possui sua própia identificação única (PID), espaço de endereçamento de memória e conjunto de recursos associados
+- Criação de processos:os processos podem ser criados de várias maneiras no Linux.
+  - O método mais comum é por meio da execução de um novo programa.
+  - Quando um programa é executado,o kernel do Linux cria um novo processo para ele.
+- modelo de fork e exec:é amplamente utilizado no Linux para criar novos processos. 
+  - O fork é um sistema de chamada que cria um novo processo que é uma cópia exata do processo pai. 
+  - Em seguida, o processo filho usa a exec para substituir sua imagem de memória pela imagem de outro programa
+- hierarquia de processos:  No Linux, os processos são organizados em uma hierarquia de árvore,onde cada processo tem um processo pai, exceto o processo raiz, que é o init ou systemd. Isso facilita o gerenciamento de processos e recursos do sistema
+- sinais: são mecanismos de comunicação entre processos no Linux.
+  - Eles são usados para notificar um processo sobre eventos ou solicitar ações
+específicas. 
+  - Por exemplo, o sinal SIGKILL é usado para terminar um processo abruptamente.
+
+- escalonamento de processos: O Linux possui um escalonador de processos que determina qual processo deve ser executado em determinado momento.
+  - Ele utiliza diferentes políticas de escalonamento, como o escalonamento de tempo compartilhado (CFS) e o escalonamento em tempo real (RT).
+
+- gestão de recursos:  O kernel do Linux gerencia os recursos do sistema, como CPU, memória e dispositivos de entrada/saída, para garantir que eles sejam usados de maneira eficiente e justa entre os processos
 
 
 <div align="center">
   imagem
 </div>
+
+#### Programando utilizando processos (Linux)
+- Para programar utilizando processos é necessário utilizar a biblioteca Unix Standard (unistd.h)
+- Fornece acesso a várias funções e constantes que são padrão no ambiente Unix, incluindo Linux.
+- Ela é uma parte essencial do desenvolvimento de software em sistemas
+operacionais baseados em Unix, como Linux
+- **Biblioteca Unix Standard (unistd.h)**
+  - Chamadas de sistema relacionadas ao processo: fork(), exec(), wait(), exit(), entre outras. Essas funções são usadas para criar, gerenciar e controlar processos.
+  - Gerenciamento de diretórios e arquivos: chdir(), access(), unlink(), rename(), entre outras. Essas funções permitem manipular diretórios e arquivos, como mudar de diretório, verificar a existência de arquivos, excluir ou renomear arquivos, etc.
+  - Acesso a variáveis de ambiente: getenv(), putenv(), setenv(), entre outras. Essas funções permitem manipular variáveis de ambiente, como obter o valor de uma variável de ambiente, definir uma nova variável de ambiente ou modificar uma variável de ambiente existente.
+  - Gerenciamento de processos e recursos do sistema: getpid(), getuid(), getgid(), gethostname(), sleep(), alarm(), entre outras. Essas funções fornecem informações sobre o processo atual, como o ID do processo, o ID do usuário, o ID do grupo, o nome do host, além de permitir a suspensão temporária do processo.
+  - Para isso, é necessário programar no linux e para isso você precisa utilizar alguma IDE ou utilizar o bloco de notas.
 
 ### ➥ Estados do processo
 - novo(new), em execução(running), em espera(waiting), pronto(ready), encerrado(terminated)
@@ -200,11 +231,77 @@ struct desc_proc *usando_cpu;
 
 
 ### ➥ Operações nos processos
-- COMANDOS
-  - fork
-    - permite a criação de um segundo fluxo de execução --> um processo filho
-  - exit
-    - quem executa é imediatamente terminado
-    - executado por uma chamada de sistema 
-  - wait
-  -  
+- processos podem ser criados ou excluídos dinamicamente
+#### crição de processos:
+- um processo pode criar outros processos- system call create-process
+- processo criador: pai (parent)
+- processo criado: filho (children)
+- processo filho pode obter recursos de seu pai ou diretamente do SO
+  - se limitado a um subconjunto do pai ➜ evita sobre-carga do sistema devido a criação de muitos processos
+- quando um processo cria outro:
+  - em termos de execução, pode ocorrer:
+    - o pai executa concorrentemente com o filho
+    - o pai espera que os filhos terminem sua execução
+  - em relação ao espaço de memória:
+    - o processo filho é uma duplicata do pai
+    - o processo filho é um programa carregado de si
+- no UNIX
+  - o processo é criado com a chamada ao sistema **fork**
+  - esse novo processo é uma cópia do pai
+  - usando a chamada **execve** depois de um fork é, executado um novo programa que é carregado na memória, destruindo a imagem do processo que o chamou
+- árvore de processos no UNIX
+
+<div align="center">
+  imagem
+</div>
+
+#### término de processos
+- o processo acaba quando é executada a última linha de comando do programa
+- este retorna dados a seu processo pai
+- o pai pode terminar a execução do filho:
+  - o filho execede a utilização de recursos
+  - a tarefa realizada pelo filho não é mais necessária
+  - o pai está sendo terminado
+- desalocar memória, arquivos abertos, buffers
+#### Comandos
+- fork
+  - permite a criação de um segundo fluxo de execução ➜ um processo filho
+  - fornece o nome da subrotina ou programa
+  - gerência do processador criar estruturas de dados necessárias e insere o processo na fila de prontos
+    - o espaço de endereçamento deve ser igual ao do processo que o criou
+- exit
+  - quem executa é imediatamente terminado
+  - executado por uma chamada de sistema 
+- wait
+  - um fluxo de execuçao espera outro terminar
+  - ocorre o bloqueio do processo o qual é inserido em um fila de processos bloqueados a espera do determinado processo
+  
+<div align="center">
+  imagem
+</div>
+
+### ➥ Comunicação entre processos
+- troca de mensagem ➜ uso de primitivas de envio (send) e recebimento (receive)
+- sinais 
+  - são interrupções de software que notificam ao processador um evento que ocorreu
+  - não permite troca de dados
+  - um processo, ao receber um sinal, pode: capturar | ignorar | mascarar(bloquear)
+
+---
+
+### Programação concorrente
+- um programa concorrente é executado simultaneamente por diversos processos que o cooperam entre si
+- é necessária a interação entre os processos para que se caracterize a concorrência:
+  - arquivos
+  - variáveis compartilhadas
+  - trocas de mensagens
+- processos concorrem a recursos
+
+### Chaveamento de contexto
+- troca de contexto ➜ alternar a CPU para outro processo (salvar estado antigo e carregar novo estado)
+- kernel
+  - quando um processo perde a CPU, seu contexto deve ser salvo
+  - para executar outro processo, seu contexto deve ser carregado na CPU
+- contexto ➜ está no PCB (registradores do processador, estado, gerenciamento de memória)
+- o chaveamento de contexto resulta em puro overhead
+- valores típicos estão entre 1 e 1000 microsegundos (varia conforme o HW utilizado)
