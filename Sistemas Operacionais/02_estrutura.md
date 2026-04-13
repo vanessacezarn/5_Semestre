@@ -196,7 +196,8 @@ SO deve ser divido em pequenos componentes e não ser um sistema monolítico
    - não é necessário conhecer como a system call é implementada
 
 <div align="center">
-   imagem
+   <img width="444" height="326" alt="image" src="https://github.com/user-attachments/assets/7bd10b42-8a44-4a88-8f6d-35047a1b7bc7" />
+
 </div>
 
 - 3 métodos para passar parâmetros às chamadas
@@ -224,7 +225,7 @@ SO deve ser divido em pequenos componentes e não ser um sistema monolítico
    - dependendo da forma que o comando foi emitido, o shell espera o processo ser finalizado ou executa o processo em 'segundo plano' (não pode receber entrada diretamente pelo teclado; o shell está livre para receber outras chamadas)
    - processo terminado ➜ executa chamada 'exit' ➜ passa ao programa que o criou código de status zero ou código de erro diferente de zero
 <div align="center">
-   imagem
+   <img width="547" height="302" alt="image" src="https://github.com/user-attachments/assets/82175698-9a3e-47f8-8ec0-a41a6c4f638c" />
 </div>
 
 #### ➥ Gerência de arquivos
@@ -246,7 +247,7 @@ SO deve ser divido em pequenos componentes e não ser um sistema monolítico
 - modelo de memória compartilhada ➜ os processos também são responsáveis por garantir a consistência da memória compartilhada
 #### EXEMPLOS DE CHAMADAS AO SISTEMA
 <div align="center">
-   imagem
+  <img width="688" height="360" alt="image" src="https://github.com/user-attachments/assets/216e4d81-e38e-4867-bf18-2242ec9f946d" />
 </div>
 
 
