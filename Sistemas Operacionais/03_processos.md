@@ -44,7 +44,8 @@
   - contexto de execução ➜ pilhas, dados
 
 <div align="center">
-  imagem
+  <img width="259" height="188" alt="image" src="https://github.com/user-attachments/assets/86db509a-6a32-4d3a-b451-8340db71315f" />
+
 </div>
 
 - processos são criados e destruídos
@@ -87,7 +88,8 @@ específicas.
 
 
 <div align="center">
-  imagem
+  <img width="489" height="300" alt="image" src="https://github.com/user-attachments/assets/b3e3fd79-a631-4725-bbe1-81ea51830015" />
+
 </div>
 
 #### Programando utilizando processos (Linux)
@@ -111,7 +113,7 @@ operacionais baseados em Unix, como Linux
 
 ### ➥ Diagrama de estados de um processo - ciclo de vida
 <div align="center">
-  <img width="619" height="291" alt="image" src="https://github.com/user-attachments/assets/d5d6629e-0482-4982-8520-0defde9862cd" />
+  <img width="519" height="261" alt="image" src="https://github.com/user-attachments/assets/d5d6629e-0482-4982-8520-0defde9862cd" />
 </div>
 
 - "novo" ➜ fila de novos
@@ -171,7 +173,8 @@ struct desc_proc *usando_cpu;
   - processo criado: **processo FILHO**
 
 <div align="center">
-  imagem
+  <img width="314" height="200" alt="image" src="https://github.com/user-attachments/assets/6ae74876-52bf-49a9-a7c7-e6576ae0affa" />
+
 </div>
 
 - P1 é o processo inicial do sistema ➜ criado durante a inicialização
@@ -252,7 +255,7 @@ struct desc_proc *usando_cpu;
 - árvore de processos no UNIX
 
 <div align="center">
-  imagem
+  <img width="356" height="264" alt="image" src="https://github.com/user-attachments/assets/033f4441-4240-4e97-a0a6-e6d0105694d9" />
 </div>
 
 #### término de processos
@@ -277,7 +280,8 @@ struct desc_proc *usando_cpu;
   - ocorre o bloqueio do processo o qual é inserido em um fila de processos bloqueados a espera do determinado processo
   
 <div align="center">
-  imagem
+  <img width="285" height="235" alt="image" src="https://github.com/user-attachments/assets/e5386bc8-59af-4798-b8e3-b7b2078c1dfe" />
+
 </div>
 
 ### ➥ Comunicação entre processos
