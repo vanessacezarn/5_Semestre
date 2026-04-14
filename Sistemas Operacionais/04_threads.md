@@ -53,7 +53,6 @@
 - gerenciamento através do Kernel
 - são escalonados para execução nos vários processadores
 - mais lentos
-- suportados diretamente pelo SO
 
 **os SO fornecem suporte a threads de usuário e de kernel**  
 
@@ -86,7 +85,7 @@
 
 <div align="center">
   <img width="178" height="179" alt="image" src="https://github.com/user-attachments/assets/3a408ab2-4d2f-47a7-9f9e-a92015dc10b3" />
-  <img width="363" height="211" alt="image" src="https://github.com/user-attachments/assets/c561aa48-70cf-4b41-9a94-6d180600ecda" />
+
 
 </div>
 
@@ -147,10 +146,10 @@
 #### pthread_create
 - é responsável por criar uma nova thread, permitindo a execução concorrente dentro do programa.
 -  Seu protótipo recebe quatro parâmetros: 
-  - o identificador da thread,
-  - os atributos (que podem ser definidos como padrão com NULL), 
-  - a função que será executada pela thread 
-  - o argumento que será passado para essa função
+    - o identificador da thread,
+    - os atributos (que podem ser definidos como padrão com NULL), 
+    - a função que será executada pela thread 
+    - o argumento que será passado para essa função
 ```
 #include <pthread.h>
 int pthread_create (pthread_t * thread, pthread_attr_t * attr, void * (*start_routine)(void *), void *arg);
