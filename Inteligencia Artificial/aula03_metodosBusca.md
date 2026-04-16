@@ -118,3 +118,6 @@
     - completude: o algoritmo garante encontrar uma solução caso ela exista
     - complexidade de tempo: quanto tempo ou nós o algoritmo leva para encontar a solução
     - * pesquisar para os métodos estudados:
+---
+- raciocínio indutivo: específico ➜ geral global/geral/total
+- raciocínio dedutivo: geral/global/total ➜ específico/
