@@ -1,12 +1,14 @@
 package com.example.crud.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 public class Categoria {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @NotBlank(message = "O nome da categoria é obrigatório")
     @Column(unique=true, nullable = false, length = 100)
     private String nome;
 

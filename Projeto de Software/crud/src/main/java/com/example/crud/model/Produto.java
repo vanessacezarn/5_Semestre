@@ -1,20 +1,27 @@
 package com.example.crud.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
 @Entity
 public class Produto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @NotBlank(message = "O nome do produto é obrigatório")
     @Column(unique=true, nullable = false, length = 100)
     private String nome;
     private String descricao;
     private double valor;
     private int quantidade;
+    @Size(max = 255, message = "A imagem deve ter no máximo 255 caracteres")
     private String imagem;
+
     @ManyToOne
     @JoinColumn(name = "categoria_id")
+    @NotNull(message = "A categoria é obrigatória")
     private Categoria categoria;
 
     public int getId() {

@@ -11,6 +11,9 @@
     <div class="row me-0 ">
         <div class="col-md-8 bg-light p-3 rounded shadow-sm "> <!-- controla o tamanho aqui -->
             <h1>Lista de Categorias</h1>
+            <div th:if="${erro}" class="alert alert-danger">
+                <p th:text="${erro}"></p>
+            </div>
             <table class="table">
                 <tr>
                     <th>Id</th>
@@ -19,7 +22,7 @@
                     <th>Excluir</th>
 
                 </tr>
-                <tr th:each="categoria :${categoria}">
+                <tr th:each="categoria :${categorias}">
                     <td th:text="${categoria.id}" ></td>
                     <td th:text="${categoria.nome}" ></td>
 

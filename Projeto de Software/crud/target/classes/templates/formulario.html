@@ -23,6 +23,9 @@
                         <div class="col-sm-8">
                             <input type="text" id="nome" class="form-control" th:field="*{nome}">
                         </div>
+                        <div class="text-danger"
+                             th:if="${#fields.hasErrors('nome')}"
+                             th:errors="*{nome}"></div>
                     </div>
 
                     <div class="row mb-3 align-items-center">
@@ -36,6 +39,10 @@
                         <label for="valor" class="col-sm-2 col-form-label text-sm-end">Valor:</label>
                         <div class="col-sm-5">
                             <input type="number" id="valor" class="form-control" th:field="*{valor}">
+                        </div>
+                        <div class="text-danger"
+                             th:if="${#fields.hasErrors('valor')}"
+                             th:errors="*{valor}">
                         </div>
                     </div>
 
@@ -56,14 +63,18 @@
                                         th:text="${cat.nome}">
                                 </option>
                             </select>
-
                         </div>
+                        <div class="text-danger" th:if="${#fields.hasErrors('categoria')}" th:errors="*{categoria}"></div>
                     </div>
 
                     <div class="row mb-3 align-items-center">
                         <label for="imagem" class="col-sm-2 col-form-label text-sm-end">Imagem:</label>
                         <div class="col-sm-8">
                             <input type="text" id="imagem" class="form-control" th:field="*{imagem}">
+                        </div>
+                        <div class="text-danger"
+                             th:if="${#fields.hasErrors('imagem')}"
+                             th:errors="*{imagem}">
                         </div>
                     </div>
 
