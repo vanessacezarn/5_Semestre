@@ -19,7 +19,7 @@
 | (a+b)*  | L3 = {todas as palavras sobre {a, b} }  |
 | (a+b)∗aa(a+b)∗  | L4 = {w possui aa como subpalavra} |
 | a∗ba∗ba∗ | L5 = {possui apenas dois b's} |
-| (a+b)∗(aa+bb)  | L6 = {w | w possui aa ou bb como sufixo}  
+| (a+b)∗(aa+bb)  | L6 = {w tal que w possui aa ou bb como sufixo}  
 
 ### ➥ Classe das liguagens regulares
 - a classe das ER denota exatamente a classe das Linguagens Regulares, ou seja:

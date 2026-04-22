@@ -1,50 +1,12 @@
 # Autômato Finito Determinístico - AFD
-- é um sistema de estados finitos
-  - um modelo matemático de sistemas com entradas e saídas discretas
-  - esse sistema pode assumir um número finito e conhecido de estados
-  - cada estado mantém somente as informações passadas necessárias para determinar a ação para a próxima entrada 🡺 não possui memória de trabalho
-- para armazenar informações, o AFD usa o conceitos de estados
-  - os estados são representados por elipses ou circulos
-    - são nomeados de 0,1,2...ou A,B,C... ou q0,q1,q2,...
-    - transições entre estados são representadas por arcos que os ligam e têm um sentido 
-      - nas transições é indicado o evento que proporciona a mudança de estado
-      - há mais de uma opção de transição entre os estados, entretanto um estado ao ler um mesmo símbolo não pode ter transição para dois estados diferentes. Em outras palavras: para qualquer par (estado atual, símbolo), existe exatamente uma transição possível.
-    - possui apenas um estado inicial (possui uma seta em cima de si)
-    - possui um ou mais estados finais (circulo pequeno dentro de um circulo grande ou a borda é mais expessa que dos demais estados)
-- nas linguagens formais é um formalismo Reconhecedor ou Operacional, pois ele irá perceber se as palavras pertencem ao dicionário da linguagem (análise lexica)
-### ➥ AFD é composta por 3 partes:
-  - **fita de entrada**
-    - dispositivo de entrada que contém o dado a ser processado
-    - fita é finita à esquerda e infinita à direita
-    - cada célula da fita armazena um símbolo pertencente a um alfabeto de entrada
-    - não é possível gravar sobre a fita  🡺 somente leitura de um símbolo por vez
-    - inicialmente a palavra de entrada ocupa toda fita.
-  - **unidade de controle**
-    - reflete o estado corrente da máquina
-    - possui uma unidade de leitura (cabeça da fita) que acessa uma célula da fita de cada vez e movimenta-se exclusivamente para a direita (uma célula)
-    - a unidade de leitura sempre inicia à esquerda da fita 
-  - **programa ou função de transição ou função programa ($\sigma$)**
-    - pode ser representada através de : diagrama, tabela, notação
-    - comanda as leituras e define o estado da máquina, ou seja, é a parte que contém a lógica e que faz o processamento
-    - é uma função parcial (cada elemento do domínio está relacionado com no máximo um elemento do contradomínio - estado e símbolo)
-    - determina o novo estado do autômato
-    - sempre inicial no símbolo mais a esquerda da palavra e lê um por um sem voltar
+- há mais de uma opção de transição entre os estados, entretanto um estado ao ler um mesmo símbolo não pode ter transição para dois estados diferentes. Em outras palavras: para qualquer par (estado atual, símbolo), existe exatamente uma transição possível.
 ### ➥ Formalmente um AFD é uma 5-upla M 
 - M = { $\Sigma$, Q, $\sigma$, q0, F} em que :
     -  $\Sigma$ =  alfabeto de entrada
     -  Q = conjunto dos estados possíveis do autômato (conjunto finito)
     -  $\sigma$ =  função programa ou função transição ou programa, definida: $\sigma$ = Q x $\Sigma$ 🡺 Q é uma função parcial
-        - $\sigma$ pode ser representado por grafo(diagrama), tabela ou notação matemática
-        - função parcial = não tem transição para todos os estados
     -  q0 = estado inicial
     -  F = conjunto de estados finais
-### ➥ Parada de um AFD
-- sempre para ao processar qualquer palavra
-- a parada de um autômato pode ser de duas maneiras: aceitando ou rejeitando a palavra W
-- condições de parada:
-   - processa o último símbolo da fita e assume um estado final = **aceita**
-   - processa o último símbolo da fita e assume um estado não final = **rejeita**
-   - função programa indefinida para o argumento = **rejeita**
 
 ### ➥ Função Programa Estendida, Computação
 - é usada para mostra formalmente a computação de um AF.
@@ -57,7 +19,7 @@
         - a = primeiro caractere, w = restante da palavra
   - Portanto $\underline{\sigma}$ consiste na sucessiva aplicação da $\sigma$ à palavra de entrada.
   - W é aceita se no final da função programa estendida o resultado for um estado final
-- exemplo: L = {W ∈ {0,1}+ | W é de tamanho ímpar e termina em 1 }
+- exemplo: L = {W ∈ {0,1}+ | W é de tamanho ímpar e termina em 1 } e M1 = ({0,1},{q0,q1,q2},$\sigma$,q0,{q1}) 
   - grafo: (q1 é estado final)
     ```mermaid
         graph LR;
@@ -76,7 +38,7 @@
     - $\sigma$ (q0,0)= q2 |  $\sigma$ (q0,1)= q1 
     - $\sigma$ (q1,0)= q0 |  $\sigma$ (q1,1)= q0
     - $\sigma$ (q2,0)= q0 |  $\sigma$ (q2,1)= q0
-  - $\underline{\sigma}$: M1 = ({0,1},{q0,q1,q2},$\sigma$,q0,{q1}) e W=101
+  - função programa estendida: $\underline{\sigma}$: M1 e W=101
     - $\underline{\sigma}$(q0,101) = $\underline{\sigma}$ ($\sigma$(q0,1),01)
     - $\underline{\sigma}$(q1,01) = $\underline{\sigma}$ ($\sigma$(q1,0),1)
     - $\underline{\sigma}$(q0,1) = $\underline{\sigma}$ ($\sigma$(q0,1),$\varepsilon$)
