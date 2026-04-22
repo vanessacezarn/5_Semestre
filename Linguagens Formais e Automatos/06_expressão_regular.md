@@ -5,7 +5,7 @@
 - uma linguagem gerada por uma expressão regular é representada por L(r) ou GERA(r)
 ### ➥ Definição: uma ER sobre um alfabeto ($\Sigma$)
 - $\varnothing$ é uma ER e denota a linguagem vazia ➜ L = {}
-- $\varepsilon$ é uma ER e denota a linguagem que possui apenas palavra vazia ➜ L = {$\varepsilon$}
+- $\varepsilon$ é uma ER e denota a linguagem que possui apenas palavra vazia ➜ L = { $\varepsilon$ }
 - qualquer símbolo x $\in$ $\Sigma$ é uma ER e denota a linguagem ➜ L = {x}
 - se 'r' e 's' são ER e denotam as lingugens R e S, então:
     - (r+s) é ER e denota a lingugem $R\cup S$➜ L = {r,s}
