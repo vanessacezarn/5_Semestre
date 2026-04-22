@@ -4,11 +4,11 @@
 - não aumenta o poder computacional do autômato
 - AFD não contém movimento vazio
 - qualquer $AF\varepsilon$ pode ser simulado por um AFND
-- uma transição vazia é representada pela aplicação da função programa, em um estado q ao símbolo $\varepsilon$
+- uma transição vazia é representada pela aplicação da função programa, em um estado q ao símbolo $\varepsilon$ (vazio)
     -  ```mermaid
           graph LR;
             q0--|a|--> q1;
-            q0--|$\varepsilon$|-->q2;
+            q0--|vazio|-->q2;
             q0--|b|--> q3;
             
         ```
@@ -29,7 +29,7 @@
          ```mermaid
           graph LR;
             q0--|a|--> q0;
-            q0--|$\varepsilon$|-->q1;
+            q0--|vazio|-->q1;
             q1--|b|--> q1;
             
         ```
