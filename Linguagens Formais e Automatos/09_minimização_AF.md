@@ -18,16 +18,19 @@
 </div>
 
 **2) marcação dos estados trivialmente não equivalentes**: marcar todos os pares do tipo {estado final, estado não final), pois obviamente, estados finais não são equivalentes a não finais
+
 **3) marcação dos estados não equivalentes**, para cada par {q_u,q_v} não marcado e para cada símbolo $a \in \Sigma$, suponha que: $\sigma(q_u,a) = pu$ e $\sigma(q_v,a)=pv$, assim:
      1) se $p_u$ = $p_v$, então $q_u$ é equivalente a $q_v$ para o símbolo 'a' e não deve ser marcado
      2) se $p_u$ != $p_v$, e o par {$p_u, p_v$} não está marcado, então {$q_u, q_v$) é incluído em uma lista a partir de {$p_u, p_v$} para posterior análise
      3) se $p_u$ != $p_v$, e o par {$p_u, p_v$} está marcado, então:
         1) {$q_u, q_v$) não é equivalente e deve ser marcado
         2) se {$q_u, q_v$) encabeça uma lista de pares, então marcar todos os pares da lista (e, recursivamente, se algum par da lista encabeça outra lista)
+
 **4) unificação do estados equivalentes** ➜ os estados dos pares não marcados são equivalentes e podem ser unificados como segue:
    1) a equivalência de estados é transitiva
    2) pares de estados não finais equivalentes podem ser unificados como um único estado não final
    3) pares de estados finais equivalentes podem ser unificados como um único estado final
    4) se algum dos estados equivalentes é inicial, então o correspondente estado unificado é inicial
    5) todas as transições com origem (respectivamente, com destino) es um estado equivalente são preservadas, mas passam a ter origem (respectivamente, destino) no correspondente estado unificado
+
 **5) exclusão dos estados inúteis**: os estados chamados inúteis devem ser excluídos, um estado 'q' é dito um estado inútil se é não final e a partir de 'q' não é possível atingir um estado final. Deve-se observar que o estado d (se incluido) sempre é inútil. Todas as transições com origem ou destino em um estado inútil são excluídas.
