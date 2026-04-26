@@ -113,15 +113,44 @@
 ### ➥ Arquitetura MVC - Model View Controller
 - separa a aparesentação e a interação dos dados do sistema
 - o sistema é estruturado em 3 componentes lógicos que interagem entre si
-  - componente modelo
-  - componente visão
-  - componente controle
+  - model ➜ gerencia os dados do sistema e as operações a eles associadas
+  - view ➜ define e gerencia como os dados são apresentados ao usuário
+  - controller ➜ gerencia a interação do usuário e passa essas interações para view e model
 -  uitilização:
+  - quando há várias maneiras de visualizar e interagir os dados
+  - quando os requisitos futuros para interação e apresentação dos dados são desconhecidos  
 -  vantagens:
--  desvantagens: pode envolver mais código e aumentar sua complexidade 
+  - permite que os dados sejam alterados independentemente de sua representação e vice-versa
+  - apoia a apresentação dos mesmo dados de maneiras diferentes, exibindo as alterações feitas em uma representação em todas as demais  
+-  desvantagens: pode envolver mais código e aumentar sua complexidade quando o modelo de dados e as interações forem simples
 <div align="center">
-  imagem
+   <img width="753" height="285" alt="image" src="https://github.com/user-attachments/assets/1cdfd600-0975-4d31-849a-3b8484e146ff" />
+  <img width="755" height="289" alt="image" src="https://github.com/user-attachments/assets/af6309fb-a15e-4f42-959f-ef9a1e5c5fd1" />
+  <img width="546" height="327" alt="image" src="https://github.com/user-attachments/assets/a3ae9bdc-e8a3-4ead-8db6-49017d5d234c" />
+
 </div>
 
 ### ➥ Arquitetura de aplicações
-- modelos genéricos reutilizáveis que descrevem a estrutura
+- modelos genéricos reutilizáveis que descrevem a estrutura de sistemas dentro de um domínio específico ➜ 'modelos prontos' que podem ser adaptados para desenvolver sistemas semelhantes
+
+### ➥ Sistema de processamento de transações
+- são concebidos para processar requisições de um usuário por informações em um banco de dados ou requisições para atualizar um banco de dados
+- permite o acesso controlado a uma grande base de informações
+- quase sempre são sistemas web ➜ cuja interface com o usuário é acessada por meio de um navegador
+<div align="center"> 
+  <img width="498" height="269" alt="image" src="https://github.com/user-attachments/assets/98c5e9ed-56d8-4d7d-b984-2648b26b7557" />
+  <img width="331" height="274" alt="image" src="https://github.com/user-attachments/assets/9c835fa5-f4b5-42c8-8d4a-9f4e87facc34" />
+</div>
+
+### ➥ Sistema de processamento de linguagem
+- traduzem uma linguagem para uma representação alternatica e, no caso das linguagens de programação, também podem executar o código resultante
+- os compiladores traduzem uma linguagem de programação em código de máquina
+<div align="center">
+  <img width="396" height="270" alt="image" src="https://github.com/user-attachments/assets/0c8d6e43-f8e7-4174-be7f-9c3dbf1280de" />
+</div>
+
+
+
+
+
+
