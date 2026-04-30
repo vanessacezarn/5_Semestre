@@ -9,7 +9,13 @@
 - ? o quão longe tu está da falha é melhor
 - produz estados como os métodos de busca, entretanto, a produção não é linear, mas sim em paralelo (como se fosse um vetor/lista) ➜ a cada geração um AG pode produzir  N estados novos
 - evolução = convergir para a solução, se ele estagna pode ocorrer uma mutação (pode ocorrer uma melhora ou piora) 
-
+#### aula 30/04
+- AG é um método de busca para problemas de ALTA COMPLEXIDADE (esforço) (aumenta a complexidade: restrições e heurística)
+  - heuristico = 'atalho/dica'
+    - dinâmico ➜ cálculo aptidão (fitness)
+       - pontos para quem (estado/cromossomo/individuos) se aproxima da solução ➜ problemas acadêmicos
+       - pontos para quem se AFASTA das restrições
+  - não faz diagnostico ➜ AG não trabalha com amostra  
 ----
 ### ➥ Contexto
 - área de IA inspirada na teoria da Evolução Natural e na Genética
