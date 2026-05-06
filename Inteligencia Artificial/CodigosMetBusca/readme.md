@@ -1,10 +1,12 @@
 # Metodos de Busca
-* Nesta pasta encontra-se a solução de alguns problemas estudados em sala durante as aulas sobre métodos de busca. Foi utilizado nos códigos o JAR buscaJava disponibilizado pelo professor (ele encontra-se dentro da pasta lib).
+
+Nesta pasta encontra-se a solução de alguns problemas estudados em sala durante as aulas sobre métodos de busca. Foi utilizado nos códigos o JAR buscaJava disponibilizado pelo professor (ele encontra-se dentro da pasta lib).
+
 ---
-## Problema da Jarra
+## ➢  Problema da Jarra
 Há duas jarras, uma jarra1 com 4 litros e outra jarra2 com 3 litros, também há uma torneira que jorra água infinitamente. o problema é deixar 2 litros em alguma das jarras.
     
-#### modelagem do método de busca:
+#### ➥  modelagem do método de busca:
 1) estados
     - estado inicial : jarra1 = 0 e jarra2 = 0 
 2) regras de transição
@@ -23,12 +25,13 @@ Há duas jarras, uma jarra1 com 4 litros e outra jarra2 com 3 litros, também h�
 
 ---
 
-## Travessia do Rio
-- Problema do Homem, Lobo, Alface e Carneiro
-    - Duas margens de rio com uma canoa. O único que rema é o homem. O objetivo é levar todos da margem esquera para margem direita.
-    - Entretanto, só um passageiro com o remador (homem) é possível. E não se pode deixar sozinhos na margem um Carneiro com alface e um Carneiro com o lobo.
-    -  qual é a sequencia de passos necessários para levar todos para a outra margem.
-#### Modelagam
+## ➢  Travessia do Rio
+Problema do Homem, Lobo, Alface e Carneiro
+    
+- Duas margens de rio com uma canoa. O único que rema é o homem. O objetivo é levar todos da margem esquera para margem direita.
+- Entretanto, só um passageiro com o remador (homem) é possível. E não se pode deixar sozinhos na margem um Carneiro com alface e um Carneiro com o lobo.
+-  qual é a sequencia de passos necessários para levar todos para a outra margem.
+#### ➥ Modelagam
 1) estados
     - estado inicial: H = "e", L = "e", A = "e" e C = "e"
         - sendo H = homem, L = lobo, A = alface e C = carneiro e todos do tipo char
@@ -47,3 +50,21 @@ Há duas jarras, uma jarra1 com 4 litros e outra jarra2 com 3 litros, também h�
     - armazenar os estados já visitados
 5) função objetivo
     -  H == 'd'&& L == 'd' && A == 'd' && C == 'd'➜ todos na margem direita do rio
+
+---
+
+## ➢ Sudoku
+matriz 9x9 de inteiros = é formado por 9 blocos 3x3 que podem ser preenchidos com inteiros de 1 a 9.
+1) estado inicial = matriz com números aleatórios em posições aleatórias
+    - inicia em tempo de programação
+    - inicia vindo arquivo
+2) regras de transição :
+    - tentar inserir nº de 1 a 9
+    - sempre começar pelo 1º slot vazio     
+3) restrições:
+    - avaliar restrições
+    - avaliar coluna
+    - avaliar box
+4) visitados 
+    
+5) estado final = variável totalVazio = 0 && nenhuma restrição ferida

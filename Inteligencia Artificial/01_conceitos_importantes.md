@@ -1,4 +1,33 @@
-## Conceitos que é necessário aprender até o fim do semestre
+## Competências da disciplina
+### unidade 1: método de busca
+- construir programas que apliquem os diferentes métodos de busca existentes em contextos reais da programação
+### unidade 2: representação de conhecimento
+- aplicar as diferentes formas de representação de conhecimento e seus motores de raciocínio em problemas reais
+### unidade 3: sistemas multiagentes
+- construir sistemas multi-agentes, aplicando os conceitos e práticas para que o sistema tenha comportamento inteligente e emergente
+### unidade 4: redes neurais
+- contruir programas utilizando técnicas de Redes Neurais para reconhecimento de padrões em situações mais reais possíveis
+---
+<div align="center">
+
+#  INTELIGÊNCIA ARTIFICIAL (IA)
+</div>
+
+IA = técnica e metodologia para contrução de Sistemas com Comportamento Inteligente
+* base de conhecimento = experiência (B,C)
+* raciocínio (A,C)
+* aprendizado de máquina = reconhecer padrões (C,D)
+    * métodos de busca (A)
+    * representação de conhecimento (B)
+    * algortimos genéricos (A)
+    * sistemas inteligentes (C)
+    * redes neurais (D) ➜ reconhecimento, diagnóstico
+* tipos de problemas ideais para IA
+   * diagnósticos  ➜ análise, reconhecimento, encaminhamento
+   * 'empacotamento' ➜ problemas que a solução está em um conjunto de passos
+
+
+## Conceitos que é necessário aprender
 ### 1)  que tipos de problemas a IA resolve :
    1) problemas que é necessário a presença de especialista, muitas vezes por causa da quantidade de restrições
    2) problema em que não se sabe o estaddo final ou problemas em que se precisa saber o passo-a-passo(como fazer) da solução
@@ -74,31 +103,3 @@
 5) função meta ou objetivo
     * função para saber se chegou ao estado final desejado ➜ qtsRainhas = 4
 
-```java
-public class Rainha {
-  static List<Rainha> visitados = new LinkedList<>();
-  
-  int matriz[][];
-  int qtdRainhas;
-
-  public Rainha(int tamanhoTabuleiro){
-    this.matriz = int(tamanhoTabuleiro, tamanhoTabuleiro);
-    this.qtdRainha = 0;
-    for (int i =0; i <this.matriz.size(); i++){
-      for (int j=0; j <this.matriz.size(); j++){
-          matriz[i][j]
-      }
-    }
-  }
-  public Rainha (int proximaRainha){
-    // metodo para percorrer as celulas para encontra uma celula vazinha e então depositar a rainha (linha, coluna)
-  }
-  public boolean ehMeta(int tamanhoTabuleiro)
-    return this.qtdRainha === tamanhoTabuleiro
-  }
-  public boolean ehValido(Rainhanovo){
-      // metodo que avelie a matriz do novo verificando se ha mais de uma rainha: na linha, na coluna, na diagonal principal e na diagonal secundaria
-  }
-
-}
-```

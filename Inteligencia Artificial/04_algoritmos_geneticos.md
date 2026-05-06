@@ -1,35 +1,32 @@
-# Computação Evolutiva: Algoritmos Genéticos 
----
-### Anotações
-- método de busca 'turbinado' com aleatoriedade ... maior chute da paróquia ➜ é um gerar e testar turbinado'/força bruta ➜ gera e testa vários ao mesmo tempo (uma população) 
+# Computação Evolutiva: Algoritmos Genéticos (AG)
+- é um método de busca para problemas de **ALTA COMPLEXIDADE** 
+    - complexidade = esforço ➜ o que gera o aumento: restrições e heurística
+    - heuristico = 'atalho/dica'
+        - dinâmico ➜ cálculo aptidão (fitness)
+            - pontos para quem (estado/cromossomo/individuos) se aproxima da solução ➜ problemas acadêmicos
+            - pontos para quem se AFASTA das restrições (o quão longe tu está da falha é melhor) é mais utilizado
+    - bastante utilizado quando não se sabe o estado final e há muitas restrições (ifs)
+- não faz diagnostico ➜ AG não trabalha com amostra  
+- é um modelo computacional baseados nas teorias de seleção natural e hereditariedade
+    - baseado na teoria da evolução Charles Darwin
+        - método de seleção natural ➜ os mais aptos ou mais perto da solução ou com os menos restrições feridas irão passar para a próxima geração
+        - método de cruzamento/crossover ➜ vai eleger dois estados para cruzarem/reproduzirem ➜ MÉTODO QUE CRIA INDIVIDUOS (único)
+        - método de mutação ➜ método que cria individuos a partir da alteração de outro
+        - eletismo ➜ tem relação com a seleção, ou seja, o melhor indivíduo sempre é selecionado para a próxima geração  
+    - evolução = convergir para a solução, se ele estagna pode ocorrer uma mutação (pode ocorrer uma melhora ou piora) 
 - é uma tecnica de IA de motores de Raciocínio parecido com é um método de busca A*
-  - diferença para A*, é que o A* gera e testa um por vez
-- é um método de busca com heuristíca  dinâmica 
-- bastante utilizado quando não se sabe o estado final e há muitas restrições (ifs)
-- ? o quão longe tu está da falha é melhor
-- produz estados como os métodos de busca, entretanto, a produção não é linear, mas sim em paralelo (como se fosse um vetor/lista) ➜ a cada geração um AG pode produzir  N estados novos
-- evolução = convergir para a solução, se ele estagna pode ocorrer uma mutação (pode ocorrer uma melhora ou piora) 
-#### aula 30/04
-- AG é um método de busca para problemas de ALTA COMPLEXIDADE (esforço) (aumenta a complexidade: restrições e heurística)
-  - heuristico = 'atalho/dica'
-    - dinâmico ➜ cálculo aptidão (fitness)
-       - pontos para quem (estado/cromossomo/individuos) se aproxima da solução ➜ problemas acadêmicos
-       - pontos para quem se AFASTA das restrições
-  - não faz diagnostico ➜ AG não trabalha com amostra  
-----
+    - diferença para A*, é que o A* gera e testa um por vez
+    - AG produz estados como os métodos de busca, entretanto, a produção não é linear, mas sim em paralelo (como se fosse um vetor/lista) ➜ a cada geração um AG pode produzir  N estados novos
+        - "método de busca 'turbinado' com aleatoriedade (maior chute da paróquia) ➜ é um gerar e testar turbinado'/força bruta ➜ gera e testa vários ao mesmo tempo (uma população) "
 ### ➥ Contexto
 - área de IA inspirada na teoria da Evolução Natural e na Genética
   - Sub-áreas:
     - algortimos genéticos
     - estratégias de evoulação
     - programação genética
-- AG é um modelo computacional baseados nas teorias de seleção natural e hereditariedade
-  - baseado na teoria da evolução Charles Darwin
-    - método de seleção natural ➜ os mais aptos ou mais perto da solução ou com os menos restrições feridas irão passar para a próxima geração
-    - método de cruzamento/crossover ➜ vai eleger dois estados para cruzarem/reproduzirem ➜ MÉTODO QUE CRIA INDIVIDUOS (único)
-    - método de mutação ➜ método que cria individuos a partir da alteração de outro
-    - eletismo ➜ tem relação com a seleção, ou seja, o melhor indivíduo sempre é selecionado para a próxima geração  
-### ➥ método de resolução de problemas
+---
+
+### ➤ método de resolução de problemas
 - toda tarefa de busca ou otimização possui:
     - estado inicial(ais) ou final(ais)
     - regras de transição ou operadores
@@ -38,25 +35,57 @@
 - método de busca e otimização tradicional
   - candidato (estado inicial )
   - aplicações das regras de transição + heurítica ➜ processo iterativo e heuríticas estáticas
-#### ➤ método de resoluçaõ de problema em AG
+### ➥ método de resoluçaõ de problema em AG
 - busca de soluções em espaço de estados
    - estados produzidos são prováveis soluções ou indivíduos da população, denominados **cromossomos**
    - os operadores ou regras de transição de estados são **mecanismos de seleção e de reprodução** que tentam encontrar melhores soluções ou indíviduos
      - sobrevivência do mais forte ➜ melhores soluções a cada geração
-     - cruzamento ou reprodução ➜ crossover ➜ criar novos a partir de 2 existentes na geração anterior (70%) os outros 30% são selecionados(seria a 'passagem' de elemetos por inteiro da geração anterior para a próxima)
-     - mutação ➜ alguma modificação 'sem explicação' de uma geração para outra 
+     - **cruzamento** ou reprodução ➜ crossover ➜ criar novos a partir de 2 existentes na geração anterior (70%) os outros 30% são selecionados(seria a 'passagem' de elemetos por inteiro da geração anterior para a próxima)
+     - **mutação** ➜ alguma modificação 'sem explicação' de uma geração para outra 
 - é possível operar sobre uma população de candidatos (espaço de estados) em paralelo
 - usa a estratégia de gerar e testar
-### ➥ fluxograma básico
+---
+
+### ➤ Fluxograma básico
 <div align="center">
   <img width="550" height="385" alt="{138B6E9D-34AF-41AA-9635-B10B34D9FAC6}" src="https://github.com/user-attachments/assets/84626781-c298-4bd6-948c-7eb9e8245a52" />
 </div>
 
+---
+## ➥ Representação ou Codificação
+- Cromosso: estrutura de dados
+    - vetores ou cadeia de valores com o conjunto de parâmetros da função objetivo (custo)
+    - conjunto de todas as configurações que o cromossomo pode assumir forma seu espaço de busca
+- Representaçãoes (codificações de variáveis):
+    - Codificação Binária (mais utilizada) 
+        - simples
+        - cada cromossomo é uma série de bits
+    -  Codificação por Permutação
+    - Codificação de Valores
+    -  Codificação em Árvore
+
+## ➥ Seleção
+- princípio básico de funcionamento de AG
+### Função de aptidão
+### Métodos
+- Roleta
+- Torneio
 - em seleção dar prefrência pelo tornerio quando a população for muito grande
   - metodo roleta é bom apenas para população pequenas, enquanto a aptidão relativa ficar abaixo de 0,..% fica mto ruim de faze a distribuição.   
+---
+## ➤ Operadores genetico
+- Crossover
+- mutação
 
 ---
-### Problema acadêmico 
+### ➤ Parâmetros
+- taxa de mutação
+- taxa de cruzamento
+- ponto de corte
+- eletismo
+
+--- 
+### ➤ Problema acadêmico 
 em problemas acadêmicos sabe-se o estado final desejado 
 - para gerar rotas é diferente de gerar palavras
   - gerar rotas precisa usar ''shuffle' para embaralhar as rotas e não gerar, pois não pode haver uma rota de 5-5
@@ -79,6 +108,7 @@ em problemas acadêmicos sabe-se o estado final desejado
   - taxaSelecao / taxaReproducao
   - taxaMutacao
   - neste caso em especial, a palavraFinal
+
 ```
 inicializarPopulacao(populacao,tamanhoPopulacao,palavraFinal)
   ordenarPopulacao(populacao) //decrescente pela aptidao
@@ -97,7 +127,7 @@ inicializarPopulacao(populacao,tamanhoPopulacao,palavraFinal)
     apagar(novaPopulacao)
 ```
 ### codigo em java
-```.java
+``` java
 
 import java.util.ArrayList;
 import java.util.List;
