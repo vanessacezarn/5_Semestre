@@ -17,4 +17,4 @@ Tendo como base os código estudados em aula sobre Algoritmo Genético, que trat
   - Qual seria a nota de aptidao? 10+10+10 = 30
 - Imaginem um filhos gerados a partir: pai [6, 5, 3, 2, 0, 1, 4, 7, 8] e  mãe [2, 6, 4, 8, 0, 1, 3, 7, 5]
   - filho1 [6, 5, 3, 2, 0, 1, 3, 7, 5]
-   -  Qual seria a nota de aptidao?  10+10+10+10+10+20+20 = 
+   -  Qual seria a nota de aptidao?  10+10+10+10+10+20+20 = 90
