@@ -42,5 +42,5 @@ relativamente simples, é restrita e limitada...” (Menezes,2000, pág60)
 - algoritmo reconhecedores e geradores que implementam as Linguagens Livres do Contexto são simples e eficientes
 - analisadores sintáticos, tradutores, compiladores, processadores de texto são implementadas com o uso dos formalismos das Linguagens Livre do Contexto
 - possui dois formalismos
-  - Autômato com Pilha
-  - Grámatica Livre de Contexto
+  - Autômato com Pilha (AP) ➜ formalismo reconhecedor ou operacional
+  - Grámatica Livre de Contexto (GLC) ➜ formalismo gerador ou axiomático
