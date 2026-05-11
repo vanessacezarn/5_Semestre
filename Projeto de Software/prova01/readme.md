@@ -11,7 +11,8 @@ Nesta atividade, deverá ser desenvolvido uma aplicação simples para controlar
 ## Arduino 
 A montagem deverá utilizar os seguintes elementos: arduino, cabo USB, protiboard, led, resistores e jumpers. A seguir a uma ilustração de como deve ser montado o arduino.
 <div align="center">
-    imagem
+    <img width="492" height="428" alt="image" src="https://github.com/user-attachments/assets/b25427b9-eca3-4961-bf0b-1e1873d14351" />
+
 </div>
 
 ## Requisitos da atividade
