@@ -21,3 +21,11 @@
         - intention = intenção = plano em execução
 
 https://www.youtube.com/watch?v=L6hoY05zS0U&t=2s
+---
+aula 14/05
+- sistema multiagentes = sociedade = comunidade = times = equipes
+  - agente:
+    - reativo: perceber/sensoriar e atuar
+    - cognitivo: perceber, raciocinar e atuar
+- teoria SMA reativo
+- teoria SMA cognitivo/deliberativo/atuar
