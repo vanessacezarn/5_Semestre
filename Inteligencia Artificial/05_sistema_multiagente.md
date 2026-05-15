@@ -22,10 +22,18 @@
 
 https://www.youtube.com/watch?v=L6hoY05zS0U&t=2s
 ---
-aula 14/05
+aula 14/05 e 15/05
 - sistema multiagentes = sociedade = comunidade = times = equipes
   - agente:
     - reativo: perceber/sensoriar e atuar
     - cognitivo: perceber, raciocinar e atuar
 - teoria SMA reativo
 - teoria SMA cognitivo/deliberativo/atuar
+
+- ambiente para desenvolvimento dos sistemas multiagentes:  [JASON](https://jason-lang.github.io/)
+    - AgentSpeak(AS) ➜ PROLOG (fatos e regras)
+    - FRAMEWORK
+      - interpretador do AS
+      - simulador
+      - integrador de tecnologia (Java): Socket, TCP/IP,...
+      -   
