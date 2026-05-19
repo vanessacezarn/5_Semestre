@@ -159,11 +159,11 @@
 P e V são operações atômicas
 
 - operação P 
-  - decrementa em 1 valor do semáforo
+  - decrementa em 1 o valor do semáforo
   - testa o valor do semáforo
-    - se o valor é negativo ➜ processo é bloqueado e colocado no fim da fila do semáfor
+    - se o valor é negativo ➜ processo é bloqueado e colocado no fim da fila do semáforo
 - operação V
-  - incrementa em 1 o valor do semáfor
+  - incrementa em 1 o valor do semáforo
   - sinaliza caso exista processo na fila do semáforo
     - retira o 1º processo da fila do semáforo  e acorda o processo
 
@@ -214,7 +214,15 @@ S.valor = S.valor + 1;
 
   ## Mutex
 </div>
+versão simplificada do semáforo, ou seja, não possui a capacidade de contar
 
+- usados para proteção da seção crítica (fazer a exclusão mútua de recursos compartilhados entre processos ou threads cooperativos)
+- fáceis de usar e eficientes
+- é uma variável que pode ter dois estados: livre ou ocupado
+  - apenas um bit é necessário para representá-lo
+  - o valor zero representa o estado livre
+  - valores diferentes de zero representam o estado ocupado       
+- antes de entrar na seção crítica é preciso chamar mutex_lock
 ---
 
 <div align="center">
