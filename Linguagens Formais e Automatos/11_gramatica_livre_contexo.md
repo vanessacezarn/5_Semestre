@@ -8,7 +8,7 @@
 - **Regra de Produção**: $S ➜ \beta$
   - $S \in V$ e $\beta \in (V \cup T)^*$
 - exemplo de GLC que gera as palavras de L = { $a^n$ $b^n$ | n >= 1
-  - G =({A}, {a,b}, P, A) em que P = {A ➜aAb | ab} 
+  - G =({A}, {a,b}, P, A) em que P = {A ➜ aAb | ab} 
 ### Árvore de Derivação
 permite a representação da derivação de palavras de uma linguagem para determinada Gramática Livre do Contexto.
 
@@ -23,3 +23,33 @@ permite a representação da derivação de palavras de uma linguagem para deter
 
 ### Gramática Ambígua
 - uma GLC é ambígua, se existe uma palavra que possua duas ou mais árvores de derivação
+
+### Simplificação de GLC
+- a simplificação é importante para construção e otimização de algoritmos e para a demonstração de teoremas
+- simplificar consiste em transformar a GLC em uma gramática equivalente com o mesmo 'poder de geração' de palavras mas de forma mais otimizada
+- simplificaçao envolve 3 etapas (nessa ordem)
+   1) Exclusão das Produções Vazias
+   2) Exclusão das Produções A ➜ B
+   3) Exclusão de Símbolos Inúteis
+#### ➥ Exclusão das Produções Vazias (A ➜ $\varepsilon$)
+- etapas:
+  1) identificar variáveis que consistuem produções vazias
+  2) identificar as variáveis que não constituem produções vazias
+     - nas identificadas na etapa 1 substituir pelas produções não vazia
+  3) se $\varepsilon$ pertence a linguagem é incluída uma produção específica para tal fim
+
+#### ➥ Exclusão das Produções A ➜ B
+- produções que produzem apenas uma variável, ou seja, apenas substituem uma variável pela outra
+- exemplo: A ➜ B e B ➜ c, então pode-se substituir por A ➜ c
+- etapas?
+  1) fecho transitivo de cada variável
+    - conunto de variáveis que podem substituí-la transitivamente
+      - exemplo: se A ➜ B e B ➜ C, então B e C pertencem ao FECHO-A
+  2) exclusão das produções que substituem variáveis
+    - se c é atingível a partir de A, por meio do FECHO-A substituir a produção
+#### ➥ Exclusão de Símbolos Inúteis
+- símbolo inutil ➜ variáveis ou terminais não usados na geração de palavras
+- etapa que exclui:
+  - produções que fazem referência aos símbolos inúteis 
+  - os própios símbolos inúteis
+  - não é necessária qualquer modificação adicional
