@@ -222,10 +222,28 @@ versão simplificada do semáforo, ou seja, não possui a capacidade de contar
   - apenas um bit é necessário para representá-lo
   - o valor zero representa o estado livre
   - valores diferentes de zero representam o estado ocupado       
-- antes de entrar na seção crítica é preciso chamar mutex_lock
+- antes de entrar na seção crítica é preciso chamar **mutex_lock**
+  - mutex estiver livre ➜ processo entra na seção crítica
+  - mutex ocupado ➜ processo que fez a chamada é bloqueado até que o processo que se encontra na sua região crítica termine e chame mutex_unlock()
+- ao sair da seção crítica **mutex_unlock**
+  - se vários processos estiverem bloqueado no mutex, um deles será escolhido aleatoriamente e poderá entrar na região crítica   
 ---
 
 <div align="center">
   
   ## Monitores
 </div>
+Brinch Hansen e Hoare propuseram uma primitiva de sincronismo de mais alto nível, para tornar mais fácil a sincronização de processos
+
+- monitores são mecanismos de sincronização eficientes, porém seu uso incorreto por parte dos programadores pode causar comportamentos imprevisíveis nos processos/threads cooperativos: espera indefinida, deadlock, condição de corrida
+- monitor é um conjunto de rotinas, variaveis e estrura de dados (toda agrupada em um tipo especial de módulos ou pacotes)
+- processos podem chamar as rotinas presentes em um monitor sempre que quiserem, mas não podem acessar diretamente as estruturas de dados internas do monitor a partir das rotinas declaradas fora dele
+- propiedade importante que torna monitores úteis para obter exclusão mútua
+  - a qualquer instante apenas um processo pode estar ativo em um monitor
+-     
+
+
+
+
+
+
