@@ -32,7 +32,7 @@
   - há um processo consumidor que remove um item do buffer a cada execução
   - há uma variável inteira (count) compartilhada entre os processos que é utilizada para contar quantos itens existem no buffer
 <div align="center">
-  imagem
+  <img width="481" height="189" alt="image" src="https://github.com/user-attachments/assets/8a1af096-e4e6-468f-9495-58d88f93ddc3" />
 </div>  
 
 - Esse problema mostra uma relação entre processos, bastante comum em SO, como por exemplo:
@@ -45,7 +45,8 @@
 - quando um processo está atualizando dados compartilhados, nenhum outro poderá faze-lo
 #### ➥ Thread Produtor X Thread Consumidor
 <div align="center">
-  imagem
+  <img width="478" height="265" alt="image" src="https://github.com/user-attachments/assets/2a928814-47d3-4e3a-9ef6-4e23d0220b63" />
+
 </div>
 
 ---
@@ -60,7 +61,8 @@
 - na execução concorrente, pode acontecer situações em que ambos os fluxos manipulem a variável **cont** concorrentemente e o valor final após a execução, pode ser inconsistente
   - exemplo: 
     <div align="center">
-      imagem
+      <img width="375" height="124" alt="image" src="https://github.com/user-attachments/assets/12f99f2e-9da7-48b8-9a38-c5c2a070dc96" />
+
     </div>
 
     - no final o contador cont terminou valendo 1, mas deveria valer 2 ➜ produtor produziu 1 item e consumidor consumiu 1 item
@@ -83,6 +85,7 @@ uma solução deve  satisfazer aos seguintes requisitos (Considere Ti = thread o
 4) **solução independente da velocidade dos fluxos** ➜ solução deve ser independente da velocidade e quantidade de processos existentes e da quantidade de threads e processos
 
 **soluções erradas ao problema da seção critica apresentam a possibilidade de deadlock, postergação indefinida ou inconsistência dos dados**
+
 ---
 ### ➤ Mecanismos de sincronização
 - mecanismos **básicos** para obtenção da exclusão mútua ➜ mecanismos de sincronização
