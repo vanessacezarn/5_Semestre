@@ -110,7 +110,7 @@
 - algumas máquinas fornecem hardware especial 
   - permitem testar e modificar o conteúdo de uma palavra ou trocar o conteúdo de duas palavras (de forma atômica)
 - instrução de máquina que executa de forma atômica
-- instrução SWAP - trocar conteúdo de uma posição de memória com o conteúdo de registrador, sem interrupção
+- instrução SWAP -  operação usada para trocar os valores de duas variáveis, registradores ou posições de memória ➜  sem interrupção
   - seção crítica está protegida por uma variável em [mem]=lock(fechadura)
   - lock = zero ➜ seção crítica livre
   - lock = 1 ➜ seção crítica ocupada
@@ -147,7 +147,7 @@
   ## Semáforos
 </div>
 
-- ferramenta de sincronização
+- ferramenta de sincronização utilizada para controlar o acesso a recursos comuns em ambientes de programação concorrente
 - é um tipo abstrato de dado que possui:
   - um valor inteiro
   - uma fila de processos
@@ -189,12 +189,12 @@ S.valor = S.valor + 1;
 ```
 ### Tipos de Semáforos
 - de contagem ➜ pode assumir qualquer valor
-  - usado para controlar o acesso à seção crítica e também para estabelecer a precedência de execução de operações em processos concorrentes
+  - usado para controlar o acesso à seção crítica (definem quantas threads podem acessar um recurso simultaneamente) e também para estabelecer a precedência de execução de operações em processos concorrentes
 - binário ➜ valor 0 e 1
   - usado somente para controlar o acesso à seção crítica em processos ou threads
 
 ### Proteção da Seção crítica com semáforos
-- valor inicial do semafor = 1
+- valor inicial do semáforo = 1
 - seção crítica estará protegida pelo uso das operações P, antes da seção crítica, e V, após a seção crítica
 - para estabelecimento da precedência de operações entre threads, para cada par de thread, um semáforo inicializado com 0 deve ser utilizado
   - thread que precisa esperar deve efetuar a operação P
@@ -209,6 +209,12 @@ S.valor = S.valor + 1;
   AtualizaBD();
   V(S);
 ```
+
+- um semáforo mantém um conjunto de permissões:
+  - acquire (adquirir) ➜ uma thread tenta obter uma permissão 
+    - se nenhuma permissão estiver disponível ➜ thread é bloqueada até que uma permissão seja liberada por outra thread
+  - release (liberar) ➜ uma thread libera uma permissão, tornando-a disponível para outra thread que possa estar esperando
+
 ---
 <div align="center">
 
@@ -235,15 +241,62 @@ versão simplificada do semáforo, ou seja, não possui a capacidade de contar
 </div>
 Brinch Hansen e Hoare propuseram uma primitiva de sincronismo de mais alto nível, para tornar mais fácil a sincronização de processos
 
-- monitores são mecanismos de sincronização eficientes, porém seu uso incorreto por parte dos programadores pode causar comportamentos imprevisíveis nos processos/threads cooperativos: espera indefinida, deadlock, condição de corrida
-- monitor é um conjunto de rotinas, variaveis e estrura de dados (toda agrupada em um tipo especial de módulos ou pacotes)
+- monitores são mecanismos de sincronização eficientes, de alto nível, usadas em programação concorrente para evitar condições de corrida quando múltiplos processos ou threads acessam recursos compartilhados
+  - porém seu uso incorreto por parte dos programadores pode causar comportamentos imprevisíveis nos processos/threads cooperativos: espera indefinida, deadlock, condição de corrida
+- monitor é um conjunto de rotinas, variáveis e estrutura de dados (toda agrupada em um tipo especial de módulos ou pacotes) ➜ encapsula as variáveis compartilhadas ou recursos e os procedimentos que operam sobre esses recursos, garantindo que apens uma thread execute dentro do monitor em um dado momento
 - processos podem chamar as rotinas presentes em um monitor sempre que quiserem, mas não podem acessar diretamente as estruturas de dados internas do monitor a partir das rotinas declaradas fora dele
 - propiedade importante que torna monitores úteis para obter exclusão mútua
   - a qualquer instante apenas um processo pode estar ativo em um monitor
--     
+- monitores são uma construção de linguagem de programação, onde o compilador sabe que são especiais e pode manipular chamadas às rotinas do monitor de forma diferente de outras chamadas de procedimento
+- quando um processo chama uma rotina do monitor
+  - verifica-se se algum outro processo está ativo dentro do monitor
+    - se sim ➜ processo que faz a chamada fica suspenso até que o outro processo tenha saído do monitor
+    - se nenhum processo estiver usando o monitor, o  processo que fez a chamada poderá entrar
+- compilador implementa a exclusão mútua em entradas de monitor
+  - como é o compilador que faz os preparativos para a exclusão mútua é menos provável a ocorrência de erros
+- **operações concorrentes implementadas dentro de um monitor sempre serão executadas de forma a ter exclusão mútua**
+- para estabelecer a precedência de operações ➜ **variáveis de condição** junto com duas operações sobre elas: wait e signal
+  -  variável de condição ➜ usada dentro do monitor para suspender threads até que alguma condição seja verdadeira
+    - útil para controlar o acesso e a ordem das threads que precisam de recursos compartilhados
+  - se a rotina do monitor não pode continuar ➜ **wait** ➜ causa o bloqueio do processo
+  - para desbloquear ➜ outro processo deve executar **signal** na variável de condição que está esperando
+- após operação **signal**
+  - hoare ➜ deixa o processo recentemente desbloqueado executar, suspendendo outro
+  - Brinch Hanse ➜ refinar o problema, exigindo que um processo que execute uma operação signal deve sair do monitor imediatamente. 
+    - se uma variável signal é executada em uma variável de condição em que vários processos estão esperando, apenas um deles é desbloqueado (determinado pelo escalonador do SO)
+- se uma variável de condição é sinalizada sem ninguém esperando nela, o sinal é perdido
+- linguagem Java suporta monitores
+  - na declaração do método ➜ synchronized
+    - garante que qualquer thread que estiver começando a executar este método, nenhuma thread poderá realizar qualquer outro método synchronized nessa classe
+    - métodos sincronizados não possuem variáveis de condição
+    - possui dois métodos: wait e notify ➜ semelhante a sleep e wakeup
+      - quando usados dentro do monitor não estão sujeitas às condições de corrida
+
+- semáforos e monitores não foram projetados para ambientes de memória compartilhada (1 ou + CPUs)
+  - em sistemas distribuidos ➜ memória distribuída
+    - esses mecanismos não são aplicáveis
+    - uso de passagem de mensagens:
+      - comunicação síncrona x assíncrona
+      - RPC - Remote Procedure Call
+      - RMI - Remote Method Invocation
 
 
+---
+<div align="center">
+  
+  ## BlockingQueue
+</div>
+é uma estrutura da biblioteca java.util.concurrent muito utilizada no desenvolvimento concorrente moderno
 
+- implementa automaticamente:
+  - sincronização
+  - espera por espaço livre
+  - espera por itens disponíveis
+  - comunicação entre threads
 
-
-
+- funcionamento:
+  - inserção: fila.put(item);
+    - se a fila estiver cheia ➜ thread espera automaticamente
+  - remoção : fila.take();
+    - se a fila estiver vazia ➜ thread espera automaticamente
+  - **a própia estrutura controla a sincronização**

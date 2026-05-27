@@ -11,7 +11,7 @@ public class Consumidor implements Runnable{
         try{
             for(int i=0; i<10; i++){
                 buffer.consumir();
-                Thread.sleep(1000); //simula o tempo de consumo
+                //Thread.sleep(1000); //simula o tempo de consumo
             }
         }catch(InterruptedException e ){
             Thread.currentThread().interrupt();

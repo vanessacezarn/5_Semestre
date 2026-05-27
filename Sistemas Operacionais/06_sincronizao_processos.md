@@ -82,7 +82,7 @@ uma solução deve  satisfazer aos seguintes requisitos (Considere Ti = thread o
 2) **progresso** ➜ Somente threads executando sua seção não crítica participam da decisão de quem será o próximo a executar sua seção crítica; 
     - nenhum processo fora de sua seção crítica pode bloquear a execução de um outro processo
 3) **espera limitada** ➜ deve existir um limite de espera ➜ processos não podem esperar indefinidamente para entrar em sua seção crítica
-4) **solução independente da velocidade dos fluxos** ➜ solução deve ser independente da velocidade e quantidade de processos existentes e da quantidade de threads e processos
+4) **solução independente da velocidade dos fluxos** ➜ solução deve ser independente da velocidade e quantidade de processos e threads existentes 
 
 **soluções erradas ao problema da seção critica apresentam a possibilidade de deadlock, postergação indefinida ou inconsistência dos dados**
 

@@ -2,20 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/laboratorio/Desktop/Sincronizacao/src/produtorConsumidorBlockingQueue/Buffer.java</file>
-            <file>file:/C:/Users/laboratorio/Desktop/Sincronizacao/src/produtorConsumidorBlockingQueue/Produtor.java</file>
-            <file>file:/C:/Users/laboratorio/Desktop/Sincronizacao/src/produtorConsumidorBlockingQueue/Consumidor.java</file>
-            <file>file:/C:/Users/laboratorio/Desktop/Sincronizacao/src/produtorConsumidorMonitores/Consumidor.java</file>
-            <file>file:/C:/Users/laboratorio/Desktop/Sincronizacao/src/produtorConsumidorSemaforo/Principal.java</file>
-            <file>file:/C:/Users/laboratorio/Desktop/Sincronizacao/src/produtorConsumidorMonitores/Principal.java</file>
-            <file>file:/C:/Users/laboratorio/Desktop/Sincronizacao/src/produtorConsumidor/Buffer.java</file>
-            <file>file:/C:/Users/laboratorio/Desktop/Sincronizacao/src/produtorConsumidorSemaforo/Buffer.java</file>
-            <file>file:/C:/Users/laboratorio/Desktop/Sincronizacao/src/produtorConsumidorSemaforo/Consumidor.java</file>
-            <file>file:/C:/Users/laboratorio/Desktop/Sincronizacao/src/produtorConsumidorBlockingQueue/Principal.java</file>
-            <file>file:/C:/Users/laboratorio/Desktop/Sincronizacao/src/produtorConsumidorSemaforo/Produtor.java</file>
-            <file>file:/C:/Users/laboratorio/Desktop/Sincronizacao/src/produtorConsumidorMonitores/BufferCircular.java</file>
-            <file>file:/C:/Users/laboratorio/Desktop/Sincronizacao/src/produtorConsumidorMonitores/Produtor.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
