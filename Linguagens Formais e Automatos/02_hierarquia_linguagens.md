@@ -44,3 +44,14 @@ relativamente simples, é restrita e limitada...” (Menezes,2000, pág60)
 - possui dois formalismos
   - Autômato com Pilha (AP) ➜ formalismo reconhecedor ou operacional
   - Grámatica Livre de Contexto (GLC) ➜ formalismo gerador ou axiomático
+---
+## ➢ Linguagens Sensíveis ao Contexto (LSC) ou tipo 1
+- formalismo reconhecedor ➜ máquina de Turing com fita limitada
+- formalismo gerador ➜ gramática sensível ao contexto
+---
+## ➢ Linguagens Enumeráveis Recursivamente (LER) ou tipo 0
+- são aquelas que podem ser aceitas por uma Máquina de Turing
+  - máquina de Turing ➜ autômato cuja fita não possui tamanho máximo e pode ser usada simultaneamente como dispositivo de entrada, saída e de memória de trabalho
+  - levando em consideração a hipótese de Church a máquina de Turing é o mais geral dispositivo de computação ➜ então, a classe LER representa o conjunto de todas as linguagens que podem ser reconhecidas mecanicamente e em um tempo finito 
+- formalismo reconhecedor ➜ máquina de Turing
+- formalismo gerador ➜ gramática irrestrita
