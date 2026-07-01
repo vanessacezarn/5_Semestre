@@ -1,14 +1,11 @@
 # MÁQUINA DE TURING
-- início do século XX
-  - definir um modelo computacional suficientemente genérico, capaz de implementar qualquer função computável
-  - viabilizar a exploração dos limites do que pode ser computado
-  - 1936 ➜ Alan Turing propôs um formalismo para representação de procedimentos efetivos
-    - "O trabalho de Turing é particularmente significativo por ter sido o primeiro a identificar programas escritos para uma "máquina computacional", como noções intuitivas do efetivamente computável." Menezes, 2011
-- máquina de Turing é usada como modelo teórico de computação ➜ atualmente, é aceita como uma formalização de um procedimento efetivo (algoritmo ou função computável)
-  - a intenção do modelo foi simular as atitudes humanas relacionadas à computação ➜ trouxe a fundamentação teórica para o desenvolvimento do computador, com a organização conhecida atualmente
-- tese ou hipótese de Church (1936) ➜ é assumida como uma hipótese para toda a teoria da computação
-  - Alonzo Church ➜ qualquer função computável pode ser processada por uma máquina de Turing, ou seja, existe um procedimento expresso na forma de uma máquina de Turing capaz de processar tal função
-  - como a noção intuitiva de procedimentos não é matematicamente precisa, é impossível demonstrar formalmente se a máquina de Turing é, de fato, o mais genérico dispositivo de computação ➜ todos os demais modelos propostos possuem, no máximo, a mesma capacidade computacional dessa máquina
+- 1900 - Problemas de Hilbert ➜ 23 maiores problemas em aberto
+- 1936 - Alan Turing desenvolve a máquina de Turing como resposta para o problema Entscheidungsproblem ou Problema de Decisão
+  - "Se existe um método mecânico (automático) para determinar se uma dada sentença lógica segue ou não de um conjunto de axiomas?"
+    -  Turing demonstrou, por meio de sua máquina, que o problema pode não ter solução ➜ Existem problemas matemáticos bem formulados para os quais não se pode dizer se tem ou não solução, são os problemas indecidíveis
+- A Máquina de Turing é considerada “uma proposta de definição formal da noção intuitiva de algoritmo” (MENEZES, 2010, p.222).
+- Como a noção de algoritmo não é demonstrável é assumida a Hipótese de Church ou de Turing-Church em que tem-se: “A capacidade de computação representada pela máquina de Turing é o limite máximo que pode ser atingido por qualquer dispositivo de computação.” (MENEZES, 2010, p.222)
+- Todo problema que pode ser resolvido por uma Máquina de Turing é um problema com uma solução que possui um algoritmo que executará em tempo polinomial, em um computador real (HOPCROFT; ULLMAN; MOTWANI, 2002).
 ---
 ### Partes da Máquina de Turing 
 - fita ➜ dispositivo de entrada e saída (armazenamento) de dados
@@ -27,3 +24,22 @@
   -  V = alfabeto auxiliar (conjunto de símbolos usados para gravação na fita da máquina)
   -  $\Sigma$ = símbolo especial que representa as células em branco na fita, pois a dita é infinita
   -  &#9447; = marcador de inicío da fita, estando sempre na célula mais à esquerda
+----
+### Função Programa
+- o diagrama possui os estados da máquina representados em forma de elipses e as transições são as arestas entre as elipses, cujo conteúdo define a troca de estado conforme a entrada que está na fita
+<div align="center">
+  <img width="315" height="182" alt="image" src="https://github.com/user-attachments/assets/06694148-4bcd-4a17-bac3-8709f401dbb8" />
+
+</div>
+
+- a transição possui 3 elementos:
+  - a ➜ símbolo lido da fita
+  - x ➜ símbolo que será gravado na fita
+  - D ➜ indica o movimento da cabeça de leitura (esquerda ou direita)
+
+----
+### Critério de parada da Máquina de Turing
+- se o processamento atingir:
+  - um estado final ➜ indica que a palavra de entrada é ACEITA (reconhecida)
+  - um estado não final ➜ a palava de entrada é REJEITADA (não reconhecida)
+  - loop infinito ➜ máquina fica infinitamente em processamento
