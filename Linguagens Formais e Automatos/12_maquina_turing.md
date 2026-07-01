@@ -22,7 +22,7 @@
   -  q0 = estado inicial, indica o ponto inicial do processamento
   -  F = conjunto de estados finais
   -  V = alfabeto auxiliar (conjunto de símbolos usados para gravação na fita da máquina)
-  -  $\Sigma$ = símbolo especial que representa as células em branco na fita, pois a dita é infinita
+  -  $\beta$ = símbolo especial que representa as células em branco na fita, pois a dita é infinita
   -  &#9447; = marcador de inicío da fita, estando sempre na célula mais à esquerda
 ----
 ### Função Programa
